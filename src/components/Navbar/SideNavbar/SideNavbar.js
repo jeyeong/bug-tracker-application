@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+import './SideNavbar.css'
+
+const Links = () => {
   return (
     <ul>
       <li><Link to="/">Dashboard Home</Link></li>
@@ -11,4 +13,12 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+const SideNavbar = () => {
+  return (
+    <div className='navbar'>
+      <Links />
+    </div>
+  );
+}
+
+export default SideNavbar;

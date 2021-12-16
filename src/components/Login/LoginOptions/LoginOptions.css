@@ -8,6 +8,7 @@
 .login__main {
   width: 100% !important;
   text-transform: none !important;
+  letter-spacing: 0.5px !important;
 }
 
 /* Demo login */

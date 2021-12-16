@@ -1,11 +1,15 @@
 import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
+import { SideNavbar } from '../components/Navbar';
+
+import './NavbarWrapper.css'
 
 const NavbarWrapper = ({ children }) => {
   return (
-    <div className='layout'>
-      <Navbar />
-      {children}
+    <div>
+      <SideNavbar />
+      <div className='content'>
+        {children}
+      </div>
     </div>
   );
 }

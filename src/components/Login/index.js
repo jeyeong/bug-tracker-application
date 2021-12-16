@@ -1,3 +1,3 @@
-import LoginOptions from "./LoginOptions";
+import LoginOptions from "./LoginOptions/LoginOptions";
 
 export { LoginOptions };

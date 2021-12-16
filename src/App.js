@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Bug Tracker</h1>
+      {/* <h1>Bug Tracker</h1>
       <button
         onClick={() =>
           logout()
@@ -36,7 +36,7 @@ function App() {
         Log Out
       </button>
 
-      <hr/>
+      <hr/> */}
 
       <Routes>
         <Route path='/' element={<Dashboard />} />
