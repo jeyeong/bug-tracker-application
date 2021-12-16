@@ -1,0 +1,9 @@
+.spinner {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.spinner > img {
+  height: 30%;
+}
