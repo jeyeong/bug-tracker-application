@@ -11,58 +11,8 @@
 }
 
 .login-page__logo {
-  height: 2.5rem;
+  height: 2.75rem;
   filter: invert(1);
-}
-
-.login {
-  width: 200px;
-  margin-bottom: 2.5vh;
-}
-
-.login__main {
-  width: 100% !important;
-  text-transform: none !important;
-}
-
-.login__demo {
-  display: flex;
-  align-items: center;
-  column-gap: 0.75rem;
-  padding: 1rem 0.3rem 0 0.3rem;
-}
-
-.login__demo > span {
-  font-size: 14px;
-  color: rgb(255, 255, 255);
-}
-
-.login__demo-users {
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-between;
-}
-
-.login__demo-user {
-  border-radius: 0.5rem;
-  padding: 0.1rem !important;
-  cursor: pointer;
-}
-
-#admin {
-  background-color: #6c5ce7;
-}
-
-#project-manager {
-  background-color: orange;
-}
-
-#developer {
-  background-color: greenyellow;
-}
-
-#submitter {
-  background-color: lightblue;
 }
 
 .login-page__footer {

@@ -1,7 +1,7 @@
 import React from 'react';
 import loadingImg from '../../assets/img/loading.svg'
 
-import './Loading.css'
+import './LoadingScreen.css'
 
 const Loading = () => {
   return (

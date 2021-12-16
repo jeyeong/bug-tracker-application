@@ -1,10 +1,13 @@
 import React from 'react';
+import NavbarWrapper from '../NavbarWrapper';
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard
-    </div>
+    <NavbarWrapper>
+      <div>
+        Dashboard
+      </div>
+    </NavbarWrapper>
   );
 }
 

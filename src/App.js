@@ -2,22 +2,23 @@ import React from 'react';
 import {
   Routes,
   Route,
-  Link
 } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 // Views
 import {
+  LoadingScreen,
   LoginPage,
   Dashboard,
-  Loading
+  Projects,
+  Tickets,
 } from './views';
 
 function App() {
   const { user, isLoading, logout } = useAuth0()
 
   if (isLoading) {
-    return <Loading />;
+    return <LoadingScreen />;
   }
 
   if (user === undefined) {
@@ -27,11 +28,6 @@ function App() {
   return (
     <div className="app">
       <h1>Bug Tracker</h1>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-      </ul>
-
       <button
         onClick={() =>
           logout()
@@ -43,7 +39,9 @@ function App() {
       <hr/>
 
       <Routes>
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/tickets' element={<Tickets />} />
       </Routes>
     </div>
   );
