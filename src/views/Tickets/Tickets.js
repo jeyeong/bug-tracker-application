@@ -1,10 +1,13 @@
 import React from 'react';
+import NavbarWrapper from '../NavbarWrapper';
 
 const Tickets = () => {
   return (
-    <div>
-      Tickets
-    </div>
+    <NavbarWrapper>
+      <div>
+        Tickets
+      </div>
+    </NavbarWrapper>
   );
 }
 

@@ -15,7 +15,9 @@ import {
 } from './views';
 
 function App() {
-  const { user, isLoading, logout } = useAuth0()
+  const { user, isLoading } = useAuth0();
+
+  console.log(user);
 
   if (isLoading) {
     return <LoadingScreen />;
@@ -27,17 +29,6 @@ function App() {
 
   return (
     <div className="app">
-      {/* <h1>Bug Tracker</h1>
-      <button
-        onClick={() =>
-          logout()
-        }
-      >
-        Log Out
-      </button>
-
-      <hr/> */}
-
       <Routes>
         <Route path='/' element={<Dashboard />} />
         <Route path='/projects' element={<Projects />} />

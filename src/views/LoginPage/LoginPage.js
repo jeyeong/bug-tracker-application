@@ -10,7 +10,7 @@ const LoginPage = () => {
       <img
         src={logo}
         className='login-page__logo'
-        alt='site logo'
+        alt='Logo'
       />
 
       <LoginOptions />

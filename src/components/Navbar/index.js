@@ -1,3 +1,4 @@
-import SideNavbar from "./SideNavbar/SideNavbar";
+import MainNavbar from "./MainNavbar/MainNavbar";
+import Toolbar from "./Toolbar/Toolbar";
 
-export { SideNavbar };
+export { MainNavbar, Toolbar };
