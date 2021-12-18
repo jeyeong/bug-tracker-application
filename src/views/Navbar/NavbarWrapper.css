@@ -10,9 +10,15 @@
   place-items: center;
 }
 
+/* Media queries - collapsible sidebar */
+
 @media screen and (max-width: 768px) {
   .post-navbar {
     margin-left: 0;
+  }
+
+  .content {
+    margin-top: 2.25rem;
   }
 
   .navbar-screen {

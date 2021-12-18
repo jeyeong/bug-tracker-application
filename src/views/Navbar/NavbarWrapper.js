@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { MainNavbar, Toolbar } from '../components/Navbar';
+import { MainNavbar, Toolbar } from '../../components/Navbar';
 
-import './NavbarWrapper.css'
+import './NavbarWrapper.css';
 
 const NavbarScreen = ({ navbarOpen, setNavbarOpen }) => {
   return (
@@ -9,15 +9,21 @@ const NavbarScreen = ({ navbarOpen, setNavbarOpen }) => {
       className={navbarOpen ? 'navbar-screen' : ''}
       onClick={() => setNavbarOpen(false)}
     />
-  )
+  );
 }
 
-const NavbarWrapper = ({ children }) => {
+const NavbarWrapper = ({ signInMode, setSignInMode, userID, children }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
     <div>
-      <MainNavbar navbarOpen={navbarOpen} />
+      <MainNavbar
+        navbarOpen={navbarOpen}
+        setNavbarOpen={setNavbarOpen}
+        signInMode={signInMode}
+        setSignInMode={setSignInMode}
+        userID={userID}
+      />
       <NavbarScreen
         navbarOpen={navbarOpen}
         setNavbarOpen={setNavbarOpen}

@@ -4,7 +4,7 @@
   height: 2rem;
   width: calc(100vw - 12rem);
   background-color: #eee;
-  box-shadow: 2px 2px 6px #bbb;
+  box-shadow: 0 4px 6px -2px #bbb;
   display: flex;
   align-items: center;
   padding: 0 0.5rem 0 0.5rem;
@@ -22,10 +22,7 @@
 @media screen and (max-width: 768px) {
   .toolbar {
     width: 100vw;
-  }
-
-  .toolbar__user {
-    display: none;
+    height: 2.25rem;
   }
 }
 

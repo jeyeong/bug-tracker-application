@@ -5,12 +5,15 @@ import Logout from './Logout';
 
 import './MainNavbar.css'
 
-const MainNavbar = ({ navbarOpen }) => {
+const MainNavbar = ({ navbarOpen, setNavbarOpen, signInMode, setSignInMode, userID }) => {
   return (
     <div className={'navbar' + (navbarOpen ? ' navbar__open' : '')}>
-      <Profile />
-      <ViewSelector />
-      <Logout />
+      <Profile
+        signInMode={signInMode}
+        userID={userID}
+      />
+      <ViewSelector setNavbarOpen={setNavbarOpen} />
+      <Logout setSignInMode={setSignInMode} />
     </div>
   );
 }

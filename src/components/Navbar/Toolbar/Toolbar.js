@@ -1,14 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import BugReportIcon from '@mui/icons-material/BugReport';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonIcon from '@mui/icons-material/Person';
 
 import './Toolbar.css';
 
-function TopToolbar({ setNavbarOpen }) {
+function Toolbar({ setNavbarOpen }) {
   const openNavbar = () => setNavbarOpen(true);
 
   return (
@@ -20,9 +20,11 @@ function TopToolbar({ setNavbarOpen }) {
       </div>
       <div className='toolbar__user-icons'>
         <div className='toolbar__dashboard'>
-          <IconButton size='small'>
-            <DashboardIcon fontSize='small' />
-          </IconButton>
+          <Link to='/'>
+            <IconButton size='small'>
+              <DashboardIcon fontSize='small' />
+            </IconButton>
+          </Link>
         </div>
         <div className='toolbar__notifications'>
           <IconButton size='small'>
@@ -39,4 +41,4 @@ function TopToolbar({ setNavbarOpen }) {
   );
 }
 
-export default TopToolbar;
+export default Toolbar;

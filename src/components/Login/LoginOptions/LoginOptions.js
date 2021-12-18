@@ -4,12 +4,15 @@ import DemoLogin from './DemoLogin';
 
 import './LoginOptions.css';
 
-const LoginOptions = () => {
+const LoginOptions = ({ setUserID, setSignInMode }) => {
   return (
     <div>
       <div className='login'>
         <Auth0Login />
-        <DemoLogin />
+        <DemoLogin
+          setUserID={setUserID}
+          setSignInMode={setSignInMode}
+        />
       </div>
     </div>
   );

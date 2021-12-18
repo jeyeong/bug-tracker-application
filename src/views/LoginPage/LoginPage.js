@@ -4,7 +4,7 @@ import { LoginOptions } from '../../components/Login'
 import './LoginPage.css';
 import logo from '../../assets/img/bug_logo.png'
 
-const LoginPage = () => {
+const LoginPage = ({ setUserID, setSignInMode }) => {
   return (
     <div className='login-page'>
       <img
@@ -13,7 +13,7 @@ const LoginPage = () => {
         alt='Logo'
       />
 
-      <LoginOptions />
+      <LoginOptions setUserID={setUserID} setSignInMode={setSignInMode} />
 
       <div className='login-page__footer'>
         Made by James Je Yeong Soh

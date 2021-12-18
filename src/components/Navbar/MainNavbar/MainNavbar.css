@@ -11,7 +11,7 @@
   padding: 0.5rem;
   box-shadow: 0 0 8px #aaa;
   border-right: 1px solid #ccc;
-  transition: 0.5s;
+  overflow-x: hidden;
 }
 
 /* Profile */
@@ -26,15 +26,22 @@
   padding-right: 0.5rem;
 }
 
-.profile__picture {
+.profile__picture,
+.profile__picture-demo {
   border-radius: 50%;
   height: 3rem;
-  width: 3rem;
+  width: 3rem !important;
+}
+
+.profile__picture-demo {
+  display: grid;
+  place-items: center;
 }
 
 .profile__welcome {
-  flex-grow: 1;
-  word-break: break-all;
+  width: calc(100% - 3.5rem);
+  overflow-x: hidden;
+  overflow-wrap: break-word;
   text-align: center;
   font-size: 14px;
   font-weight: 600;
@@ -91,6 +98,7 @@
     left: -13rem;
     z-index: 2;
     box-shadow: none;
+    transition: 0.5s;
   }
 
   .navbar__open {
