@@ -15,14 +15,14 @@ import {
   NavbarWrapper,
 } from './views';
 
-const getUserData = () => {
+const getUserRole = id => {
   axios
-    .get('https://bug-tracker-backend-jy.herokuapp.com/data')
+    .get(`https://bug-tracker-backend-jy.herokuapp.com/data?id=${id}`)
     .then(res => console.log(res));
 }
 
 const App = () => {
-  // UserID
+  // States to facilitate Auth0 + demo user sign in
   const [signInMode, setSignInMode] = useState('auth0');
   const [userID, setUserID] = useState(undefined);
 
@@ -31,10 +31,15 @@ const App = () => {
 
   // UserID is set in two ways:
   // (1) Auth0, which delivers the ID via 'sub' in a '[method]|[ID]' format
-  // (2) Demo login, which changes userID directly, hence the signInMode check
+  // (2) Demo login, which will change userID directly, hence the signInMode check
   if (signInMode === 'auth0' && userID !== userIDAuth0) {
     setUserID(userIDAuth0);
   }
+
+  // console.log(userID);
+
+  if (userID !== undefined)
+    getUserRole(userID);
 
   // Views
   if (isLoading || signInMode === 'loading') {

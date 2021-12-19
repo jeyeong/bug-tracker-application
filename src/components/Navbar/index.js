@@ -1,4 +1,4 @@
 import MainNavbar from "./MainNavbar/MainNavbar";
-import Toolbar from "./Toolbar/Toolbar";
+import Topbar from "./Topbar/Topbar";
 
-export { MainNavbar, Toolbar };
+export { MainNavbar, Topbar };

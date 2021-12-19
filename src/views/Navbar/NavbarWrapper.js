@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { MainNavbar, Toolbar } from '../../components/Navbar';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { MainNavbar, Topbar } from '../../components/Navbar';
 
 import './NavbarWrapper.css';
 
@@ -13,6 +14,14 @@ const NavbarScreen = ({ navbarOpen, setNavbarOpen }) => {
 }
 
 const NavbarWrapper = ({ signInMode, setSignInMode, userID, children }) => {
+  const [role, setRole] = useState(undefined);
+
+  useEffect(() => {
+    axios
+      .get(`https://bug-tracker-backend-jy.herokuapp.com/data?id=${userID}`)
+      .then(res => setRole(res?.data[0].role));
+  }, [userID])
+
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
@@ -22,14 +31,17 @@ const NavbarWrapper = ({ signInMode, setSignInMode, userID, children }) => {
         setNavbarOpen={setNavbarOpen}
         signInMode={signInMode}
         setSignInMode={setSignInMode}
-        userID={userID}
+        role={role}
       />
       <NavbarScreen
         navbarOpen={navbarOpen}
         setNavbarOpen={setNavbarOpen}
       />
       <div className='post-navbar'>
-        <Toolbar setNavbarOpen={setNavbarOpen} />
+        <Topbar
+          role={role}
+          setNavbarOpen={setNavbarOpen}
+        />
         <div className='content'>
           {children}
         </div>

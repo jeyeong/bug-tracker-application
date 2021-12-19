@@ -1,4 +1,4 @@
-.toolbar {
+.topbar {
   position: fixed;
   top: 0;
   height: 2rem;
@@ -10,7 +10,18 @@
   padding: 0 0.5rem 0 0.5rem;
 }
 
-.toolbar__user-icons {
+.topbar__role {
+  margin-left: 0.5rem;
+  color: #555;
+  font-size: 12px;
+}
+
+.topbar__rolename {
+  color: #111;
+  font-weight: 600;
+}
+
+.topbar__user-icons {
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
@@ -20,14 +31,18 @@
 /* Media queries */
 
 @media screen and (max-width: 768px) {
-  .toolbar {
+  .topbar {
     width: 100vw;
     height: 2.25rem;
+  }
+
+  .topbar__role {
+    display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .toolbar__menu {
+  .topbar__menu {
     display: none;
   }
 }

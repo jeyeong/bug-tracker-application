@@ -6,32 +6,35 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonIcon from '@mui/icons-material/Person';
 
-import './Toolbar.css';
+import './Topbar.css';
 
-function Toolbar({ setNavbarOpen }) {
+const Topbar = ({ role, setNavbarOpen }) => {
   const openNavbar = () => setNavbarOpen(true);
 
   return (
-    <div className='toolbar'>
-      <div className='toolbar__menu'>
+    <div className='topbar'>
+      <div className='topbar__menu'>
         <IconButton size='small' onClick={openNavbar}>
           <MenuIcon fontSize='small' />
         </IconButton>
       </div>
-      <div className='toolbar__user-icons'>
-        <div className='toolbar__dashboard'>
+      <div className='topbar__role'>
+        Logged in as: <span className='topbar__rolename'>{role}</span>
+      </div>
+      <div className='topbar__user-icons'>
+        <div className='topbar__dashboard'>
           <Link to='/'>
             <IconButton size='small'>
               <DashboardIcon fontSize='small' />
             </IconButton>
           </Link>
         </div>
-        <div className='toolbar__notifications'>
+        <div className='topbar__notifications'>
           <IconButton size='small'>
             <NotificationsIcon fontSize='small' />
           </IconButton>
         </div>
-        <div className='toolbar__profile'>
+        <div className='topbar__profile'>
           <IconButton size='small'>
             <PersonIcon fontSize='small' />
           </IconButton>
@@ -41,4 +44,4 @@ function Toolbar({ setNavbarOpen }) {
   );
 }
 
-export default Toolbar;
+export default Topbar;
