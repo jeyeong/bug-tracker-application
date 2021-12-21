@@ -1,0 +1,42 @@
+.usermgmt__unauthorized {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 2.5rem);
+}
+
+.usermgmt {
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+}
+
+.usermgmt__title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.usermgmt__edit {
+  margin-left: 1rem;
+  color: #6c757d;
+}
+
+.usermgmt__panels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .usermgmt {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .usermgmt__edit {
+    display: block;
+    margin-left: 0;
+  }
+}

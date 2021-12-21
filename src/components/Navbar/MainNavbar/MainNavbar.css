@@ -1,6 +1,6 @@
 .navbar {
   height: 100vh;
-  width: 12rem;
+  width: 12.5rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 0.7rem;
-  padding: 0 1rem;
+  padding: 0 0.9rem;
 }
 
 .views__link {
@@ -71,7 +71,7 @@
 
 .views__home span,
 .views__other span {
-  font-size: 12.5px;
+  font-size: 12px;
   text-transform: none;
 }
 
@@ -84,7 +84,7 @@
 .logout {
   flex-grow: 1;
   width: 100%;
-  padding: 0.7rem 1rem 1.25rem 1rem;
+  padding: 0.7rem 0.9rem 1.25rem 0.9rem;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -101,7 +101,7 @@
 @media screen and (max-width: 768px) {
   .navbar {
     left: -13rem;
-    z-index: 2;
+    z-index: 4;
     box-shadow: none;
     transition: 0.5s;
   }

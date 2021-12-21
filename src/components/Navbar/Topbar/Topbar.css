@@ -2,12 +2,13 @@
   position: fixed;
   top: 0;
   height: 2rem;
-  width: calc(100vw - 12rem);
+  width: inherit;
   background-color: #eee;
   box-shadow: 0 4px 6px -2px #bbb;
   display: flex;
   align-items: center;
   padding: 0 0.5rem 0 0.5rem;
+  z-index: 2;
 }
 
 .topbar__role {
@@ -32,7 +33,6 @@
 
 @media screen and (max-width: 768px) {
   .topbar {
-    width: 100vw;
     height: 2.25rem;
   }
 

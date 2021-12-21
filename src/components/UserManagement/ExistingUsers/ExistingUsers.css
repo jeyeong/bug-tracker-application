@@ -1,0 +1,44 @@
+.exst-users {
+  border-radius: 8px;
+  box-shadow: 0 0 6px #888;
+  background-color: #fff;
+  width: 47.5%;
+  height: min-content;
+  overflow-y: hidden;
+}
+
+.exst-users__title {
+  height: 2.5rem;
+  width: 100%;
+  background-color: #3f50b5;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.exst-users__frame {
+  height: 400px;
+  padding: 0 0.5rem;
+}
+
+.exst-users__frame > div {
+  border: none;
+}
+
+.exst-users__toolbar {
+  column-gap: 0.5rem;
+}
+
+.exst-users__toolbar > button {
+  font-size: 12.5px !important;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 992px) {
+  .exst-users {
+    width: 100%;
+  }
+}

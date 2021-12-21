@@ -1,45 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   Routes,
   Route,
 } from 'react-router-dom';
-import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
+import CustomTheme from './utils/material-ui/CustomTheme';
 
 import {
   LoadingScreen,
   LoginPage,
   Dashboard,
+  ManageUsers,
+  ManageProjects,
   Projects,
   Tickets,
   NavbarWrapper,
 } from './views';
 
-const getUserRole = id => {
-  axios
-    .get(`https://bug-tracker-backend-jy.herokuapp.com/data?id=${id}`)
-    .then(res => console.log(res));
-}
-
 const App = () => {
-  // States to facilitate Auth0 + demo user sign in
   const [signInMode, setSignInMode] = useState('auth0');
   const [userID, setUserID] = useState(undefined);
+  const [role, setRole] = useState(undefined);
 
+  // Role
+  useEffect(() => {
+    axios
+      .get(`https://bug-tracker-backend-jy.herokuapp.com/users/${userID}`)
+      .then(res => setRole(res?.data?.role));
+  }, [userID])
+
+  // Auth0 user info
   const { user, isLoading } = useAuth0();
   const userIDAuth0 = user?.sub.match(/[^|]*$/)[0];
 
-  // UserID is set in two ways:
-  // (1) Auth0, which delivers the ID via 'sub' in a '[method]|[ID]' format
-  // (2) Demo login, which will change userID directly, hence the signInMode check
+  // Update userID once signed in (if using Auth0)
   if (signInMode === 'auth0' && userID !== userIDAuth0) {
     setUserID(userIDAuth0);
   }
-
-  // console.log(userID);
-
-  if (userID !== undefined)
-    getUserRole(userID);
 
   // Views
   if (isLoading || signInMode === 'loading') {
@@ -55,13 +53,17 @@ const App = () => {
       <NavbarWrapper
         signInMode={signInMode}
         setSignInMode={setSignInMode}
-        userID={userID}
+        role={role}
       >
-        <Routes>
-          <Route path='/' element={<Dashboard />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/tickets' element={<Tickets />} />
-        </Routes>
+        <CustomTheme>
+          <Routes>
+            <Route path='/' element={<Dashboard />} />
+            <Route path='/manage-users' element={<ManageUsers role={role} />} />
+            <Route path='/manage-projects' element={<ManageProjects role={role} />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/tickets' element={<Tickets />} />
+          </Routes>
+        </CustomTheme>
       </NavbarWrapper>
     </div>
   );

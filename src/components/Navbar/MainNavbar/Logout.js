@@ -7,7 +7,7 @@ const Logout = ({ setSignInMode }) => {
 
   const handleLogout = () => {
     logout();
-    setSignInMode('auth0');
+    setTimeout(() => setSignInMode('auth0'), 500);
   }
 
   return (

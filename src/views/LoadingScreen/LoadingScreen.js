@@ -3,7 +3,7 @@ import loadingImg from '../../assets/img/loading.svg'
 
 import './LoadingScreen.css'
 
-const Loading = () => {
+const LoadingScreen = () => {
   return (
     <div className='spinner'>
       <img src={loadingImg} alt='Loading...' />
@@ -11,4 +11,4 @@ const Loading = () => {
   );
 }
 
-export default Loading;
+export default LoadingScreen;

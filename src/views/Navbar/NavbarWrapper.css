@@ -1,13 +1,15 @@
+.full-view {
+  display: flex;
+}
+
 .post-navbar {
-  margin-left: 12rem;
+  margin-left: 12.5rem;
   position: relative;
+  width: calc(100vw - 12.5rem);
 }
 
 .content {
   margin-top: 2rem;
-  height: 90vh;
-  display: grid;
-  place-items: center;
 }
 
 /* Media queries - collapsible sidebar */
@@ -15,6 +17,7 @@
 @media screen and (max-width: 768px) {
   .post-navbar {
     margin-left: 0;
+    width: 100vw;
   }
 
   .content {
@@ -28,11 +31,7 @@
     width: 100%;
     background-color: #000;
     opacity: 0.7;
-    z-index: 1;
+    z-index: 3;
     transition: 0.25s;
-  }
-
-  .navbar-screen__hidden {
-    opacity: 0;
   }
 }

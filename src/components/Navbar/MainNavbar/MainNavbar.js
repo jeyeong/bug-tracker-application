@@ -12,7 +12,10 @@ const MainNavbar = ({ navbarOpen, setNavbarOpen, signInMode, setSignInMode, role
         signInMode={signInMode}
         role={role}
       />
-      <ViewSelector setNavbarOpen={setNavbarOpen} />
+      <ViewSelector
+        setNavbarOpen={setNavbarOpen}
+        role={role}
+      />
       <Logout setSignInMode={setSignInMode} />
     </div>
   );
