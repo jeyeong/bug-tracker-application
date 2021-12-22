@@ -26,7 +26,7 @@ const App = () => {
   // Role
   useEffect(() => {
     axios
-      .get(`https://bug-tracker-backend-jy.herokuapp.com/users/${userID}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/users/${userID}`)
       .then(res => setRole(res?.data?.role));
   }, [userID])
 

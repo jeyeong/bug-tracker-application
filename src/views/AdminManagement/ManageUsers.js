@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExistingUsers } from '../../components/UserManagement';
+import UserManagement from '../../components/UserManagement/UserManagement';
 
 import './ManageUsers.css';
 
@@ -13,8 +13,7 @@ const ManageUsers = ({ role }) => {
       <span className='usermgmt__title'>Manage Users</span>
       <span className='usermgmt__edit'>(Double click on a role to edit)</span>
       <div className='usermgmt__panels'>
-        <ExistingUsers />
-        <div className='usermgmt__unassigned'></div>
+        <UserManagement />
       </div>
     </div>
   );

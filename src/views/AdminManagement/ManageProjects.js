@@ -3,7 +3,7 @@ import React from 'react';
 const ManageProjects = ({ userID }) => {
   return (
     <div>
-      Manage Projects  
+      Manage Projects
     </div>
   );
 }

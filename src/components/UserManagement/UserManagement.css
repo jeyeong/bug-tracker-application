@@ -1,0 +1,109 @@
+.exst-users,
+.unasgn-users {
+  border-radius: 8px;
+  box-shadow: 0 0 6px #888;
+  background-color: #fff;
+  width: 47.5%;
+  max-width: 750px;
+  height: min-content;
+  margin-top: 1rem;
+  overflow-y: hidden;
+}
+
+.exst-users__title,
+.unasgn-users__title {
+  height: 2.5rem;
+  width: 100%;
+  background-color: #3f50b5;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+.exst-users__frame,
+.unasgn-users__frame {
+  height: 400px;
+  padding: 0 0.5rem;
+}
+
+/* Existing users */
+
+.exst-users__frame > div {
+  border: none;
+}
+
+.exst-users__toolbar {
+  column-gap: 0.5rem;
+}
+
+.exst-users__toolbar > button {
+  font-size: 12.5px !important;
+}
+
+/* To hide horizontal scrollbar on the existing table */
+
+.css-1pans1z-MuiDataGrid-virtualScroller {
+  overflow-x: hidden !important;
+}
+
+/* Unassigned users */
+
+.unasgn-users__frame {
+  display: flex;
+  padding: 1.5rem 2rem;
+  column-gap: 1.5rem;
+}
+
+.unasgn-list {
+  width: calc(50% - 1.5rem);
+  border: 1px solid rgba(200, 200, 200, 1);
+  border-radius: 8px;
+}
+
+.unasgn-list span {
+  font-size: 13px !important;
+  display: flex;
+  justify-content: center;
+}
+
+.unasgn-role {
+  width: 50%;
+  padding: 0 1rem;
+}
+
+.unasgn-role__button {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.unasgn-role__button button {
+  background-color: #3f50b5;
+  font-size: 13px;
+  text-transform: none !important;
+  letter-spacing: 0.3px;
+}
+
+.unasgn-role__button button:hover {
+  background-color: #2d3d99;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1050px) {
+  .exst-users,
+  .unasgn-users {
+    width: 100%;
+  }
+
+  .unasgn-users {
+    margin-top: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .css-1pans1z-MuiDataGrid-virtualScroller {
+    overflow-x: auto !important;
+  }
+}

@@ -6,7 +6,7 @@
 
 .usermgmt {
   width: 100%;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 2.75rem;
 }
 
 .usermgmt__title {
@@ -21,8 +21,8 @@
 
 .usermgmt__panels {
   display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
+  column-gap: min(2.5%, 25px);
+  flex-wrap: wrap;
 }
 
 /* Media queries */
