@@ -4,8 +4,6 @@ import RoleSelector from './RoleSelector';
 import AssignButton from './AssignButton';
 import ResetButton from './ResetButton';
 
-import '../UserManagement.css';
-
 const Unassigned = ({ unassignedUsers, setUnassignedUsers, existingUsers,
   setExistingUsers, setSnackbarMessage }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);

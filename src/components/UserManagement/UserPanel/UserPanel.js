@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Existing, Unassigned } from '.';
-import SnackbarAlert from '../Alerts/SnackbarAlert';
+import Existing from '../Existing/Existing';
+import Unassigned from '../Unassigned/Unassigned';
+import SnackbarAlert from '../../Alerts/SnackbarAlert';
 
-import './UserManagement.css';
+import './UserPanel.css';
 
-const UserManagement = () => {
+const UserPanel = () => {
   // Get data from backend API
   const [existingUsers, setExistingUsers] = useState(undefined);
   const [unassignedUsers, setUnassignedUsers] = useState(undefined);
@@ -53,4 +54,4 @@ const UserManagement = () => {
   );
 }
 
-export default UserManagement;
+export default UserPanel;

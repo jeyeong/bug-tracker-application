@@ -1,11 +1,12 @@
 import React from 'react';
-import UserManagement from '../../components/UserManagement/UserManagement';
+import { UserPanel } from '../../components/UserManagement';
+import Unauthorized from '../../components/Unauthorized/Unauthorized';
 
 import './ManageUsers.css';
 
 const ManageUsers = ({ role }) => {
   if (role !== 'Admin') {
-    return <div className='usermgmt__unauthorized'>Unauthorized access</div>
+    return <Unauthorized />
   }
 
   return (
@@ -13,7 +14,7 @@ const ManageUsers = ({ role }) => {
       <span className='usermgmt__title'>Manage Users</span>
       <span className='usermgmt__edit'>(Double click on a role to edit)</span>
       <div className='usermgmt__panels'>
-        <UserManagement />
+        <UserPanel />
       </div>
     </div>
   );
