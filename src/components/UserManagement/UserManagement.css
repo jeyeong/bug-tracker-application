@@ -24,7 +24,7 @@
 
 .exst-users__frame,
 .unasgn-users__frame {
-  height: 400px;
+  height: 390px;
   padding: 0 0.5rem;
 }
 
@@ -114,8 +114,12 @@
     width: 100%;
   }
 
+  .exst-users {
+    margin-top: 1.25rem;
+  }
+
   .unasgn-users {
-    margin-top: 1.75rem;
+    margin-top: 2rem;
   }
 }
 

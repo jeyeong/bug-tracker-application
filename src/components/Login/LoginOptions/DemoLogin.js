@@ -17,7 +17,7 @@ const DemoLogin = ({ setUserID, setSignInMode }) => {
           <div
             className='login__demo-user'
             id='admin'
-            onClick={() => handleDemoUser('1111')}
+            onClick={() => handleDemoUser('2222')}
           >
             <PersonIcon />
           </div>
@@ -27,7 +27,7 @@ const DemoLogin = ({ setUserID, setSignInMode }) => {
           <div
             className='login__demo-user'
             id='project-manager'
-            onClick={() => handleDemoUser('2222')}
+            onClick={() => handleDemoUser('3333')}
           >
             <PersonIcon />
           </div>
@@ -37,7 +37,7 @@ const DemoLogin = ({ setUserID, setSignInMode }) => {
           <div
             className='login__demo-user' 
             id='developer'
-            onClick={() => handleDemoUser('3333')}
+            onClick={() => handleDemoUser('4444')}
           >
             <PersonIcon />
           </div>
@@ -47,7 +47,7 @@ const DemoLogin = ({ setUserID, setSignInMode }) => {
           <div
             className='login__demo-user' 
             id='submitter'
-            onClick={() => handleDemoUser('4444')}
+            onClick={() => handleDemoUser('5555')}
           >
             <PersonIcon />
           </div>
