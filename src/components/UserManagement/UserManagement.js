@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ExistingUsers, UnassignedUsers } from '.';
+import { Existing, Unassigned } from '.';
 import SnackbarAlert from '../Alerts/SnackbarAlert';
 
 import './UserManagement.css';
 
-function UserManagement() {
+const UserManagement = () => {
   // Get data from backend API
   const [existingUsers, setExistingUsers] = useState(undefined);
   const [unassignedUsers, setUnassignedUsers] = useState(undefined);
@@ -15,7 +15,7 @@ function UserManagement() {
       .get(`${process.env.REACT_APP_BACKEND_URL}/users`)
       .then(res => setExistingUsers(res?.data));
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/unassigned`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/users/unassigned`)
       .then(res => setUnassignedUsers(res?.data));
   }, []);
 
@@ -23,12 +23,18 @@ function UserManagement() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
+  useEffect(() => {
+    if (snackbarMessage === '') {
+      return;
+    }
+    setOpenSnackbar(true)
+  }, [snackbarMessage]);
+
   return (
     <>
-      <ExistingUsers
+      <Existing
         existingUsers={existingUsers}
         setExistingUsers={setExistingUsers}
-        setOpenSnackbar={setOpenSnackbar}
         setSnackbarMessage={setSnackbarMessage}
       />
       <SnackbarAlert
@@ -36,12 +42,11 @@ function UserManagement() {
         setOpen={setOpenSnackbar}
         message={snackbarMessage}
       />
-      <UnassignedUsers
+      <Unassigned
         unassignedUsers={unassignedUsers}
         setUnassignedUsers={setUnassignedUsers}
         existingUsers={existingUsers}
         setExistingUsers={setExistingUsers}
-        setOpenSnackbar={setOpenSnackbar}
         setSnackbarMessage={setSnackbarMessage}
       />
     </>

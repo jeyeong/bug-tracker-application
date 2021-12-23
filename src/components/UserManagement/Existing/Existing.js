@@ -1,7 +1,7 @@
 import React from 'react';
 import UserTable from './UserTable';
 
-const ExistingUsers = ({ existingUsers, setExistingUsers, setOpenSnackbar,
+const Existing = ({ existingUsers, setExistingUsers, setOpenSnackbar,
   setSnackbarMessage }) => {
   return (
     <div className='exst-users'>
@@ -21,4 +21,4 @@ const ExistingUsers = ({ existingUsers, setExistingUsers, setOpenSnackbar,
   );
 }
 
-export default ExistingUsers;
+export default Existing;

@@ -8,7 +8,7 @@ import {
   GridToolbarDensitySelector,
 } from '@mui/x-data-grid';
 
-const UserTable = ({ data, setData, setOpenSnackbar, setSnackbarMessage }) => {
+const UserTable = ({ data, setData, setSnackbarMessage }) => {
   // Config
   const roleOptions = ['Admin', 'Project Manager', 'Developer', 'Submitter'];
   const pageSizes = [10, 25, 50, 100];
@@ -54,14 +54,12 @@ const UserTable = ({ data, setData, setOpenSnackbar, setSnackbarMessage }) => {
 
     if (current.first_name === 'Demo') {
       setSnackbarMessage('Error: Cannot reassign demo users.');
-      setOpenSnackbar(true);
       setData(data.map(d => d));
       return;
     }
 
     if (current.role === 'Admin' || value === 'Admin') {
       setSnackbarMessage('Error: Insufficient privileges to assign Admin.');
-      setOpenSnackbar(true);
       setData(data.map(d => d));
       return;
     }
@@ -69,13 +67,12 @@ const UserTable = ({ data, setData, setOpenSnackbar, setSnackbarMessage }) => {
     const updatedUser = {
       ...current,
       [field]: value,
-    }
+    };
 
     axios
-      .put(`${process.env.REACT_APP_BACKEND_URL}/users/`, updatedUser)
+      .put(`${process.env.REACT_APP_BACKEND_URL}/users/`, updatedUser);
 
     setSnackbarMessage(`Reassigned ${current.first_name} ${current.last_name} as: ${value}`);
-    setOpenSnackbar(true);
     setData(data.map(u => u.user_id === id ? updatedUser : u));
   }
 

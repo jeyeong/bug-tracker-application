@@ -1,4 +1,4 @@
-import ExistingUsers from "./ExistingUsers/ExistingUsers";
-import UnassignedUsers from "./UnassignedUsers/UnassignedUsers";
+import Existing from "./Existing/Existing";
+import Unassigned from "./Unassigned/Unassigned";
 
-export { ExistingUsers, UnassignedUsers };
+export { Existing, Unassigned };

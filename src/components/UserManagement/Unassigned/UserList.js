@@ -10,11 +10,11 @@ const UserList = ({ unassignedUsers, selectedIndex, setSelectedIndex }) => {
     <div className='unasgn-list'>
       <List>
         {unassignedUsers.map((u, i) => {
-          const btn_idx = i;
+          const this_index = i;
           return (
             <ListItemButton
-              selected={selectedIndex === btn_idx}
-              onClick={event => handleListItemClick(event, btn_idx)}
+              selected={selectedIndex === this_index}
+              onClick={event => handleListItemClick(event, this_index)}
               key={u.user_id}
             >
               <ListItemText primary={`${u.first_name} ${u.last_name}`} />
