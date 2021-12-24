@@ -1,3 +1,4 @@
-import ProjectPanel from "./ProjectPanel/ProjectPanel";
+import CreateProject from './CreateProject/CreateProject';
+import ProjectList from './ProjectList/ProjectList';
 
-export { ProjectPanel };
+export { CreateProject, ProjectList };

@@ -1,6 +1,8 @@
 .projmgmt {
   width: 100%;
   padding: 1.75rem 3rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .projmgmt__title {

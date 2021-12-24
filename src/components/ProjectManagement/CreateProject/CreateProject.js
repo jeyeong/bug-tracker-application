@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from '@mui/material';
 
-function UtilityBar() {
+import './CreateProject.css';
+
+const CreateProject = () => {
   return (
-    <div className='projmgmt-util'>
+    <div className='projmgmt-create'>
       <Button
         variant='contained'
-        className='projmgmt-util__create'
+        className='projmgmt-create__button'
       >
         Create
       </Button>
@@ -14,4 +16,4 @@ function UtilityBar() {
   );
 }
 
-export default UtilityBar;
+export default CreateProject;
