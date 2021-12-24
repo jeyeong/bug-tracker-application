@@ -1,6 +1,8 @@
 import React from 'react';
 import UserTable from './UserTable';
 
+import './Existing.css';
+
 const Existing = ({ existingUsers, setExistingUsers, setOpenSnackbar,
   setSnackbarMessage }) => {
   return (

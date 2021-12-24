@@ -1,3 +1,4 @@
-import UserPanel from './UserPanel/UserPanel';
+import Existing from './Existing/Existing';
+import Unassigned from './Unassigned/Unassigned';
 
-export { UserPanel };
+export { Existing, Unassigned };

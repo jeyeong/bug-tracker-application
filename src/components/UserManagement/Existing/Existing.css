@@ -28,8 +28,6 @@
   padding: 0 0.5rem;
 }
 
-/* Existing */
-
 .exst-users__frame > div {
   border: none;
 }
@@ -46,64 +44,6 @@
 
 .css-1pans1z-MuiDataGrid-virtualScroller {
   overflow-x: hidden !important;
-}
-
-/* Unassigned */
-
-.unasgn-users__frame {
-  display: flex;
-  padding: 1.5rem 2rem;
-  column-gap: 1.5rem;
-}
-
-.unasgn-list {
-  width: calc(50% - 1.5rem);
-  border: 1px solid rgba(200, 200, 200, 1);
-  border-radius: 8px;
-}
-
-.unasgn-list span {
-  font-size: 13px !important;
-  display: flex;
-  justify-content: center;
-}
-
-.unasgn-role {
-  width: 50%;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.unasgn-role__assign {
-  margin-top: 1.25rem;
-}
-
-.unasgn-role__assign button,
-.unasgn-role__reset button {
-  background-color: #3f50b5;
-  font-size: 13px;
-  text-transform: none !important;
-  letter-spacing: 0.3px;
-}
-
-.unasgn-role__assign button:hover,
-.unasgn-role__reset button:hover {
-  background-color: #2d3d99;
-}
-
-.unasgn-role__reset {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  row-gap: 0.5rem;
-  font-size: 14px;
-}
-
-.unasgn-role__reset > div {
-  text-align: center;
 }
 
 /* Media queries */

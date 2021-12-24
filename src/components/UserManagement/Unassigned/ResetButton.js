@@ -21,7 +21,7 @@ function ResetButton({ setUnassignedUsers, setExistingUsers, setSnackbarMessage 
 
   return (
     <div className='unasgn-role__reset'>
-      <span>For demo purposes:</span>
+      <span>For demo purposes only:</span>
       <div>
         <Button variant='contained' onClick={handleClick}>
           Reset

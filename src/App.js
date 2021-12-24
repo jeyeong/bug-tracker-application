@@ -19,15 +19,20 @@ import {
 } from './views';
 
 const App = () => {
+  const [appIsLoading, setAppIsLoading] = useState(false);
   const [signInMode, setSignInMode] = useState('auth0');
   const [userID, setUserID] = useState(undefined);
   const [role, setRole] = useState(undefined);
 
   // Role
   useEffect(() => {
+    setAppIsLoading(true);
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/users/${userID}`)
-      .then(res => setRole(res?.data?.role));
+      .then(res => {
+        setRole(res?.data?.role);
+        setAppIsLoading(false);
+      });
   }, [userID])
 
   // Auth0 user info
@@ -40,7 +45,7 @@ const App = () => {
   }
 
   // Views
-  if (isLoading || signInMode === 'loading') {
+  if (isLoading || appIsLoading) {
     return <LoadingScreen />;
   }
 

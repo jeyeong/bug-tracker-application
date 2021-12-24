@@ -3,3 +3,60 @@
 .projmgmt-util {
   margin-top: 1rem;
 }
+
+.projmgmt-util__create {
+  background-color: #3f50b5;
+  font-size: 13px;
+  text-transform: none !important;
+  letter-spacing: 0.3px;
+}
+
+.projmgmt-util__create:hover {
+  background-color: #2d3d99;
+}
+
+/* Project list */
+
+.projmgmt-list {
+  height: 350px;
+  max-width: 700px;
+  margin: 1.5rem 0.1rem 0 0.1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px #888;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+}
+
+.projmgmt-list__item {
+  border-radius: 2rem;
+  box-shadow: 0 2px 3px #555;
+  background-color: #6c5ce7;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.5rem 0.3rem 1rem;
+}
+
+.projmgmt-list__title {
+  color: #eee;
+  font-size: 14px;
+}
+
+.projmgmt-list__mgr {
+  background-color: #aba5fe;
+  border-radius: 2rem;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+}
+
+.projmgmt-list__mgr > span {
+  color: #000;
+  font-weight: 600;
+  font-size: 12px;
+}

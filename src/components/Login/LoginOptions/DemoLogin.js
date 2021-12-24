@@ -4,8 +4,7 @@ import PersonIcon from '@mui/icons-material/Person';
 
 const DemoLogin = ({ setUserID, setSignInMode }) => {
   const handleDemoUser = userID => {
-    setSignInMode('loading');  // simulate loading
-    setTimeout(() => setSignInMode('demo'), 1000);
+    setSignInMode('demo');
     setUserID(userID);
   }
 
