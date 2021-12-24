@@ -3,11 +3,16 @@ import ProjectItem from './ProjectItem';
 
 import './ProjectList.css';
 
-function ProjectList() {
+function ProjectList({ projects }) {
   return (
     <div className='projmgmt-list'>
-      <ProjectItem title='Project Title' manager='Bob Smith' />
-      <ProjectItem title='Project Title' manager='John Lennon' />
+      {projects.map(p => (
+        <ProjectItem
+          title={p.name}
+          manager={`${p.first_name} ${p.last_name}`}
+          key={p.project_id}
+        />
+      ))}
     </div>
   );
 }

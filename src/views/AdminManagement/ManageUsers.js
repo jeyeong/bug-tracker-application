@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Existing, Unassigned } from '../../components/UserManagement';
-import { SnackbarAlert } from '../../components/Alerts';
 import Unauthorized from '../../components/Unauthorized/Unauthorized';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import { Existing, Unassigned } from '../../components/UserManagement';
+import { SnackbarAlert } from '../../components/Alerts';
 
 import './ManageUsers.css';
 
@@ -38,7 +38,7 @@ const ManageUsersDisplay = () => {
 
   // Loading screen
   if (appIsLoading) {
-    return <LoadingScreen />
+    return <LoadingScreen />;
   }
 
   // User management view
