@@ -1,5 +1,17 @@
-.projmgmt-s__title {
+/* Name */
+
+.projmgmt-s-name {
   margin-top: 1rem;
+  display: flex;
+}
+
+.projmgmt-s-name__title {
   font-weight: 600;
   font-size: 1.5rem;
+}
+
+.projmgmt-s-name__edit {
+  margin-left: 4px;
+  padding-top: 6px !important;
+  color: #222 !important;
 }

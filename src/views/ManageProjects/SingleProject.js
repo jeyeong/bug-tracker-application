@@ -23,7 +23,7 @@ const SingleProject = ({ id }) => {
         }
         setAppIsLoading(false);
       });
-  }, []);
+  }, [id]);
 
   // Loading screen
   if (appIsLoading) {

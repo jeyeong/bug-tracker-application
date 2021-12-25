@@ -38,7 +38,7 @@ const AllProjects = () => {
 }
 
 const ManageProjects = ({ role }) => {
-  let [searchParams, _] = useSearchParams();
+  let [searchParams] = useSearchParams();
 
   if (role !== 'Admin') {
     return <Unauthorized />;
