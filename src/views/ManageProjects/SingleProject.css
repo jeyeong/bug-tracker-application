@@ -1,19 +1,14 @@
 .projmgmt-s {
   width: 100%;
-  padding: 1.75rem 3rem;
+  padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
-}
-
-.projmgmt-s__title {
-  font-weight: 600;
-  font-size: 1.2rem;
 }
 
 /* Media queries */
 
 @media screen and (max-width: 768px) {
   .projmgmt-s {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
   }
 }

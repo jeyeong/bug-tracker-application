@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
+import {
+  SPBackButton,
+  SPNameDescription,
+} from '../../components/ProjectManagement';
 
 import './SingleProject.css';
 
@@ -34,8 +38,11 @@ const SingleProject = ({ id }) => {
   // Project
   return (
     <div className='projmgmt-s'>
-      <span className='projmgmt-s__title'>{project.name}</span>
-      <div>Single project {id}</div>
+      <SPBackButton />
+      <SPNameDescription
+        name={project.name}
+        description={project.description}
+      />
     </div>
   );
 }
