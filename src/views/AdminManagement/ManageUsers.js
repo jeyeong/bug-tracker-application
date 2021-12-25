@@ -29,12 +29,21 @@ const ManageUsersDisplay = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
+  // When snackbar message is set, show snackbar
   useEffect(() => {
     if (snackbarMessage === '') {
       return;
     }
     setOpenSnackbar(true)
   }, [snackbarMessage]);
+
+  // When snackbar is closed, erase snackbar message
+  useEffect(() => {
+    if (openSnackbar) {
+      return;
+    }
+    setSnackbarMessage('');
+  }, [openSnackbar]);
 
   // Loading screen
   if (appIsLoading) {

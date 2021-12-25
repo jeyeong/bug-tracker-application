@@ -9,7 +9,7 @@ function ProjectList({ projects }) {
       {projects.map(p => {
         const manager = p?.first_name && p?.last_name
           ? `${p.first_name} ${p.last_name}`
-          : 'None';
+          : '';
 
         return (
           <ProjectItem
