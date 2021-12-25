@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Unauthorized from '../../components/Unauthorized/Unauthorized';
+import { Unauthorized } from '../../components/Errors';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { Existing, Unassigned } from '../../components/UserManagement';
 import { SnackbarAlert } from '../../components/Alerts';

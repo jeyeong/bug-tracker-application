@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSearchParams } from 'react-router-dom';
-import Unauthorized from '../../components/Unauthorized/Unauthorized';
+import { Unauthorized } from '../../components/Errors';
 import SingleProject from './SingleProject';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { CreateProject, ProjectList } from '../../components/ProjectManagement';
