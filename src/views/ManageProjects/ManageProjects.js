@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSearchParams } from 'react-router-dom';
 import Unauthorized from '../../components/Unauthorized/Unauthorized';
+import SingleProject from './SingleProject';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
-import {
-  CreateProject,
-  ProjectList,
-  SingleProject,
-} from '../../components/ProjectManagement';
+import { CreateProject, ProjectList } from '../../components/ProjectManagement';
 
 import './ManageProjects.css';
 
@@ -41,7 +38,7 @@ const AllProjects = () => {
 }
 
 const ManageProjects = ({ role }) => {
-  let [searchParams, setSearchParams] = useSearchParams();
+  let [searchParams, _] = useSearchParams();
 
   if (role !== 'Admin') {
     return <Unauthorized />;
