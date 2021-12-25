@@ -24,15 +24,31 @@ function ViewSelector({ setNavbarOpen, role }) {
 
   return (
     <div className='views'>
-      <Link to={homeView.href} className='views__link'>
-        <Button variant="contained" onClick={closeNavbar} className='views__home'>
+      <Link
+        to={homeView.href}
+        className='views__link'
+      >
+        <Button
+          variant="contained"
+          onClick={closeNavbar}
+          className='views__home'
+        >
           <span>{homeView.title}</span>
         </Button>
       </Link>
 
       {otherViews.map(view => (
-        <Link to={view.href} className='views__link' key={view.title}>
-          <Button variant="outlined" onClick={closeNavbar} className='views__other' startIcon={<view.icon />}>
+        <Link
+          to={view.href}
+          className='views__link'
+          key={view.title}
+        >
+          <Button
+            variant="outlined"
+            onClick={closeNavbar}
+            className='views__other'
+            startIcon={<view.icon />}
+          >
             <span>{view.title}</span>
           </Button>
         </Link>
