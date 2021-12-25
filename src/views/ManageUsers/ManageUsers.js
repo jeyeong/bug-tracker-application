@@ -14,14 +14,18 @@ const ManageUsersDisplay = () => {
   const [appIsLoading, setAppIsLoading] = useState(true);
 
   useEffect(() => {
+    let counter = 2;  // for synchronous fetching
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/users`)
-      .then(res => setExistingUsers(res?.data));
+      .then(res => {
+        setExistingUsers(res?.data);
+        if (--counter == 0) setAppIsLoading(false);
+      });
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/users/unassigned`)
       .then(res => {
         setUnassignedUsers(res?.data);
-        setAppIsLoading(false);
+        if (--counter == 0) setAppIsLoading(false);
       });
   }, []);
 
