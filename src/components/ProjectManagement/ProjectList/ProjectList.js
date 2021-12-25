@@ -15,6 +15,7 @@ function ProjectList({ projects }) {
           <ProjectItem
             title={p.name}
             manager={manager}
+            id={p.project_id}
             key={p.project_id}
           />
         )

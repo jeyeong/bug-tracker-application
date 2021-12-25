@@ -19,12 +19,13 @@ import {
 } from './views';
 
 const App = () => {
+  // Sign-in and user ID
   const [appIsLoading, setAppIsLoading] = useState(false);
   const [signInMode, setSignInMode] = useState('auth0');
   const [userID, setUserID] = useState(undefined);
   const [role, setRole] = useState(undefined);
 
-  // Role
+  // Get role from backend API
   useEffect(() => {
     setAppIsLoading(true);
     axios
@@ -35,11 +36,10 @@ const App = () => {
       });
   }, [userID])
 
-  // Auth0 user info
+  // Auth0
   const { user, isLoading } = useAuth0();
   const userIDAuth0 = user?.sub.match(/[^|]*$/)[0];
 
-  // Update userID once signed in (if using Auth0)
   if (signInMode === 'auth0' && userID !== userIDAuth0) {
     setUserID(userIDAuth0);
   }
