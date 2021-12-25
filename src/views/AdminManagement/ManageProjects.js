@@ -29,7 +29,7 @@ const ManageProjectsDisplay = () => {
   return (
     <div className='projmgmt'>
       <span className='projmgmt__title'>Manage Projects</span>
-      <CreateProject />
+      <CreateProject projects={projects} setProjects={setProjects} />
       <ProjectList projects={projects} />
     </div>
   );
