@@ -15,14 +15,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.3rem 0 1rem;
+  padding: 0 0.3rem 0 1.2rem;
   overflow: hidden;
 }
 
 .projmgmt-item__title {
   color: #eee;
-  font-size: 14px;
-  letter-spacing: 0.25px;
+  font-size: 13px;
+  letter-spacing: 0.3px;
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
@@ -34,7 +34,7 @@
 }
 
 .projmgmt-item__mgr {
-  background-color: #67b7f7;
+  background-color: #94cfff;
   border-radius: 2rem;
   height: 25px;
   width: min-content;
