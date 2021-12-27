@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Unauthorized } from '../../components/Errors';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { Existing, Unassigned } from '../../components/UserManagement';
-import { SnackbarAlert } from '../../components/Alerts';
+import { SnackbarAlert } from '../../components/Auxiliary';
 
 import './ManageUsers.css';
 
@@ -30,24 +30,7 @@ const ManageUsersDisplay = () => {
   }, []);
 
   // Snackbar
-  const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
-
-  // When snackbar message is set, show snackbar
-  useEffect(() => {
-    if (snackbarMessage === '') {
-      return;
-    }
-    setOpenSnackbar(true)
-  }, [snackbarMessage]);
-
-  // When snackbar is closed, erase snackbar message
-  useEffect(() => {
-    if (openSnackbar) {
-      return;
-    }
-    setSnackbarMessage('');
-  }, [openSnackbar]);
 
   // Loading screen
   if (appIsLoading) {
@@ -66,9 +49,8 @@ const ManageUsersDisplay = () => {
           setSnackbarMessage={setSnackbarMessage}
         />
         <SnackbarAlert
-          open={openSnackbar}
-          setOpen={setOpenSnackbar}
           message={snackbarMessage}
+          setMessage={setSnackbarMessage}
         />
         <Unassigned
           unassignedUsers={unassignedUsers}

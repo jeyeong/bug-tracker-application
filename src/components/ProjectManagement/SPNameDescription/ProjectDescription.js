@@ -33,7 +33,7 @@ const NameChangeDialog = ({ description, open, setOpen, project, setProject }) =
 
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth='xs'>
-      <DialogTitle>Change project name</DialogTitle>
+      <DialogTitle>Change project description</DialogTitle>
       <DialogContent>
         <TextField
           multiline
