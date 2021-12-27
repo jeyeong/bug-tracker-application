@@ -6,7 +6,7 @@ import './ProjectList.css';
 function ProjectList({ projects }) {
   return (
     <div className='projmgmt-list'>
-      {projects.map(p => {
+      {projects.map((p, i) => {
         const manager = p?.first_name && p?.last_name
           ? `${p.first_name} ${p.last_name}`
           : '';
@@ -16,7 +16,7 @@ function ProjectList({ projects }) {
             title={p.name}
             manager={manager}
             id={p.project_id}
-            key={p.project_id}
+            key={i}
           />
         )
       })}

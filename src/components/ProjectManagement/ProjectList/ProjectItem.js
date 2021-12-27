@@ -12,7 +12,7 @@ const ProjectItem = ({ title, manager, id }) => {
           <span>{manager}</span>
         </div>
         <div className='projmgmt-item__edit'>
-          <Link to={`/manage-projects?id=${id}`}>
+          <Link to={`/manage-projects?id=${id ?? ''}`}>
             <IconButton>
               <EditIcon />
             </IconButton>

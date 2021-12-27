@@ -25,7 +25,7 @@ const CreateDialog = ({ open, setOpen, projects, setProjects }) => {
       )
       .then(res => {
         const newProject = {
-          project_id: res?.project_id,
+          project_id: res?.data?.project_id,
           name: name,
           description: description,
         }
