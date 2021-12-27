@@ -15,3 +15,27 @@
   padding-top: 6px !important;
   color: #222 !important;
 }
+
+/* Description */
+
+.projmgmt-s-desc {
+  display: flex;
+  align-items: flex-start;
+}
+
+.projmgmt-s-desc__box {
+  margin-top: 1rem;
+  min-height: 160px;
+  width: 650px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 14.5px;
+  color: #222;
+}
+
+.projmgmt-s-desc__edit {
+  color: #222 !important;
+  margin-top: 10px !important;
+  margin-left: 2px !important;
+}

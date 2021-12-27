@@ -12,7 +12,11 @@ const SPNameDescription = ({ name, description, project, setProject }) => {
         project={project}
         setProject={setProject}
       />
-      <ProjectDescription description={description} />
+      <ProjectDescription
+        description={description}
+        project={project}
+        setProject={setProject}
+      />
     </>
   );
 }

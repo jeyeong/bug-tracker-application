@@ -41,7 +41,6 @@ const NameChangeDialog = ({ name, open, setOpen, project, setProject }) => {
           margin='dense'
           label='Name'
           type='text'
-          rows={5}
           fullWidth
         />
       </DialogContent>
