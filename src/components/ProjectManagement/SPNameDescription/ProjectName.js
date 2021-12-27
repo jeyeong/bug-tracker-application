@@ -22,7 +22,7 @@ const NameChangeDialog = ({ name, open, setOpen, project, setProject }) => {
   }
 
   const handleConfirm = async () => {
-    await axios.put(
+    axios.put(
       `${process.env.REACT_APP_BACKEND_URL}/projects/change-name/${project.project_id}`,
       { name: newName }
     );
