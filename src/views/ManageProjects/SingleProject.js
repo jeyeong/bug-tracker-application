@@ -5,6 +5,7 @@ import { ResourceNotFound } from '../../components/Errors';
 import {
   SPBackButton,
   SPNameDescription,
+  SPTeam,
 } from '../../components/ProjectManagement';
 
 import './SingleProject.css';
@@ -45,6 +46,7 @@ const SingleProject = ({ id }) => {
         project={project}
         setProject={setProject}
       />
+      <SPTeam />
     </div>
   );
 }

@@ -1,0 +1,70 @@
+.projmgmt-s-team {
+  margin-top: 1.3rem;
+}
+
+.projmgmt-s-team__title {
+  display: flex;
+  align-items: center;
+  margin-left: 1px;
+}
+
+.projmgmt-s-team__title svg {
+  margin-top: -1.5px;
+}
+
+.projmgmt-s-team__title span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 0.4rem;
+}
+
+/* Members */
+
+.projmgmt-s-team__members {
+  margin-top: 0.75rem;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+
+.projmgmt-s-team__role-title {
+  display: block;
+  margin-left: 4px;
+  margin-bottom: 0.25rem;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.projmgmt-s-team__role-chips {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+.projmgmt-s-team__chip {
+  min-width: 140px;
+  height: 30px;
+  border-radius: 2rem;
+  padding: 0 0.75rem;
+  padding-top: 1px;
+  display: grid;
+  place-items: center;
+  color: #111;
+  font-size: 12.5px;
+  letter-spacing: 0.25px;
+}
+
+#chip__project-manager {
+  background-color: #ffc107;
+}
+
+#chip__developer {
+  background-color: greenyellow;
+}
+
+#chip__submitter {
+  background-color: #5ffcfc;
+}

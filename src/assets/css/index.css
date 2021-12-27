@@ -3,8 +3,8 @@
   box-sizing: border-box;
 }
 
-:root {
-  --primary-color: rgb(0, 30, 60);
+html {
+  overflow-x: hidden;
 }
 
 p {

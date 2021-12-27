@@ -1,7 +1,7 @@
 /* Name */
 
 .projmgmt-s-name {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   display: flex;
 }
 
@@ -19,23 +19,26 @@
 /* Description */
 
 .projmgmt-s-desc {
+  margin-top: 1.25rem;
   display: flex;
   align-items: flex-start;
 }
 
 .projmgmt-s-desc__box {
-  margin-top: 1rem;
-  min-height: 160px;
+  min-height: 140px;
   width: 600px;
-  border: 1px solid #888;
-  border-radius: 8px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px #aaa;
+  background-color: #ddecf8;
   padding: 0.6rem 1rem;
   font-size: 14.5px;
   color: #222;
 }
 
 .projmgmt-s-desc__edit {
+  position: relative;
+  top: -5px;
   color: #222 !important;
-  margin-top: 10px !important;
-  margin-left: 2px !important;
+  margin-left: 3px !important;
 }
