@@ -42,6 +42,8 @@ const SingleProject = ({ id }) => {
       <SPNameDescription
         name={project.name}
         description={project.description}
+        project={project}
+        setProject={setProject}
       />
     </div>
   );

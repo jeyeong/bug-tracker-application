@@ -4,10 +4,14 @@ import ProjectDescription from './ProjectDescription';
 
 import './SPNameDescription.css';
 
-const SPNameDescription = ({ name, description }) => {
+const SPNameDescription = ({ name, description, project, setProject }) => {
   return (
     <>
-      <ProjectName name={name} />
+      <ProjectName
+        name={name}
+        project={project}
+        setProject={setProject}
+      />
       <ProjectDescription description={description} />
     </>
   );

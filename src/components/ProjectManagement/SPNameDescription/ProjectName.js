@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Button,
   IconButton,
@@ -10,13 +11,24 @@ import {
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
-const NameChangeDialog = ({ open, setOpen, name }) => {
+const NameChangeDialog = ({ name, open, setOpen, project, setProject }) => {
   const [newName, setNewName] = useState(name);
 
   const handleNameEdit = e => setNewName(e.target.value);
+
   const handleClose = () => {
     setOpen(false);
     setTimeout(() => setNewName(name), 250);
+  }
+
+  const handleConfirm = async () => {
+    await axios.put(
+      `${process.env.REACT_APP_BACKEND_URL}/projects/change-name/${project.project_id}`,
+      { name: newName }
+    );
+    
+    setProject({ ...project, name: newName });
+    setOpen(false);
   }
 
   return (
@@ -35,13 +47,13 @@ const NameChangeDialog = ({ open, setOpen, name }) => {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleClose}>Confirm</Button>
+        <Button onClick={handleConfirm}>Confirm</Button>
       </DialogActions>
     </Dialog>
   );
 }
 
-const ProjectName = ({ name }) => {
+const ProjectName = ({ name, project, setProject }) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
@@ -58,18 +70,12 @@ const ProjectName = ({ name }) => {
       </IconButton>
 
       <NameChangeDialog
+        name={name}
         open={openDialog}
         setOpen={setOpenDialog}
-        name={name}
+        project={project}
+        setProject={setProject}
       />
-      {/* {openDialog
-        ? <NameChangeDialog
-            open={openDialog}
-            setOpen={setOpenDialog}
-            name={name}
-          />
-        : null
-      } */}
     </div>
   );
 }

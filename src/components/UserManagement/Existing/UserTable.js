@@ -47,7 +47,7 @@ const UserTable = ({ data, setData, setSnackbarMessage }) => {
     </GridToolbarContainer>
   )
 
-  // Handle role edits
+  // Handle role edit
   const editHandler = (params) => {
     const { id, field, value } = params;
     const current = data.find(d => d.user_id === id);
