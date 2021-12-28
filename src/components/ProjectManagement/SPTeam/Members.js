@@ -7,21 +7,27 @@ const Members = () => {
       <div>
         <span className='projmgmt-s-team__role-title'>Project Managers</span>
         <div className='projmgmt-s-team__role-chips'>
-          <MemberChip type='project-manager' />
+          <MemberChip
+            type='project-manager'
+          />
         </div>
       </div>
 
       <div>
         <span className='projmgmt-s-team__role-title'>Developers</span>
         <div className='projmgmt-s-team__role-chips'>
-          <MemberChip type='developer' />
+          <MemberChip
+            type='developer'
+          />
         </div>
       </div>
 
       <div>
         <span className='projmgmt-s-team__role-title'>Submitters</span>
         <div className='projmgmt-s-team__role-chips'>
-          <MemberChip type='submitter' />
+          <MemberChip
+            type='submitter'
+          />
         </div>
       </div>
     </div>

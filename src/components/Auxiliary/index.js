@@ -1,3 +1,4 @@
+import ConfirmationDialog from './ConfirmationDialog/ConfirmationDialog';
 import SnackbarAlert from "./SnackbarAlert/SnackbarAlert";
 
-export { SnackbarAlert };
+export { ConfirmationDialog, SnackbarAlert };

@@ -44,6 +44,11 @@
 #admin.login__demo-user {
   box-shadow: 0 0 2.5px 1px yellow;
   margin-right: 1px;
+  transition: 0.2s;
+}
+
+#admin.login__demo-user:hover {
+  box-shadow: 0 0 3px 2px yellow;
 }
 
 #project-manager {
