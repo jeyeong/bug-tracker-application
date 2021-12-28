@@ -13,16 +13,24 @@ import './SingleProject.css';
 const SingleProject = ({ id }) => {
   // Get data from backend API
   const [project, setProject] = useState(undefined);
+  const [team, setTeam] = useState(undefined);
   const [appIsLoading, setAppIsLoading] = useState(true);
 
   useEffect(() => {
+    let counter = 2;  // for synchronous fetching
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/projects/${id}`)
       .then(res => {
         if (res?.data) {
           setProject(res.data);
         }
-        setAppIsLoading(false);
+        if (--counter === 0) setAppIsLoading(false);
+      });
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/projects/${id}/team`)
+      .then(res => {
+        setTeam(res?.data);
+        if (--counter === 0) setAppIsLoading(false);
       });
   }, [id]);
 
@@ -46,7 +54,10 @@ const SingleProject = ({ id }) => {
         project={project}
         setProject={setProject}
       />
-      <SPTeam />
+      <SPTeam
+        team={team}
+        setTeam={setTeam}
+      />
     </div>
   );
 }

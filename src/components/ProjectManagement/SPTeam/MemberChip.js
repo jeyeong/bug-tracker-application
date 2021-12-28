@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ConfirmationDialog } from '../../Auxiliary';
 
-const MemberChip = ({ type }) => {
+const MemberChip = ({ type, name, id, team, setTeam }) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   // Callback function for deletion, to be used by the confirmation dialog
@@ -20,7 +20,7 @@ const MemberChip = ({ type }) => {
         >
           x
         </span>
-        Je Yeong Soh
+        {name}
       </div>
       {openDialog
         ? <ConfirmationDialog

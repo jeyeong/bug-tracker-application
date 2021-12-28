@@ -4,7 +4,7 @@ import Members from './Members';
 
 import './SPTeam.css';
 
-const SPTeam = () => {
+const SPTeam = ({ team, setTeam }) => {
   return (
     <>
       <div className='projmgmt-s-team'>
@@ -12,7 +12,7 @@ const SPTeam = () => {
           <GroupsIcon sx={{fontSize: 25}} />
           <span>Team</span>
         </div>
-        <Members />
+        <Members team={team} setTeam={setTeam} />
       </div>
     </>
   );
