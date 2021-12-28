@@ -31,7 +31,8 @@
 .projmgmt-s-team__role-title {
   display: block;
   margin-left: 4px;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
+  color: #333;
   font-size: 10.5px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -44,6 +45,8 @@
   row-gap: 10px;
 }
 
+/* Member chip */
+
 .projmgmt-s-team__chip {
   min-width: 140px;
   height: 30px;
@@ -55,6 +58,7 @@
   color: #111;
   font-size: 12.5px;
   letter-spacing: 0.25px;
+  position: relative;
 }
 
 #chip__project-manager {
@@ -67,4 +71,21 @@
 
 #chip__submitter {
   background-color: #5ffcfc;
+}
+
+.projmgmt-s-team__delete-member {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: red;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding-bottom: 1px;
+  cursor: pointer;
 }
