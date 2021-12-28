@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MemberChip from './MemberChip';
+import { SnackbarAlert } from '../../Auxiliary';
 
 // Helper function that groups the team member array by role
 const groupByRole = team => {
@@ -15,10 +16,13 @@ const groupByRole = team => {
   return rv;
 };
 
-const Members = ({ team, setTeam }) => {
+const Members = ({ team, setTeam, pid }) => {
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+
   const groupedMembers = groupByRole(team);
 
   return (
+    <>
     <div className='projmgmt-s-team__members'>
       <div>
         <span className='projmgmt-s-team__role-title'>Project Managers</span>
@@ -30,6 +34,8 @@ const Members = ({ team, setTeam }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
+              pid={pid}
+              setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />
           ))}
@@ -40,6 +46,8 @@ const Members = ({ team, setTeam }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
+              pid={pid}
+              setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />
           ))}
@@ -56,6 +64,8 @@ const Members = ({ team, setTeam }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
+              pid={pid}
+              setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />
           ))}
@@ -72,12 +82,19 @@ const Members = ({ team, setTeam }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
+              pid={pid}
+              setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />
           ))}
         </div>
       </div>
     </div>
+    <SnackbarAlert
+      message={snackbarMessage}
+      setMessage={setSnackbarMessage}
+    />
+    </>
   );
 }
 

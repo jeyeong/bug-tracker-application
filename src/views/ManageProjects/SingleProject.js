@@ -57,6 +57,7 @@ const SingleProject = ({ id }) => {
       <SPTeam
         team={team}
         setTeam={setTeam}
+        pid={id}
       />
     </div>
   );
