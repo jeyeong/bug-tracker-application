@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Dialog,
   TextField,
@@ -8,7 +9,7 @@ import {
   Button,
 } from '@mui/material';
 
-const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam, setSnackbarMessage }) => {
+const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam, pid, setSnackbarMessage }) => {
   const [search, setSearch] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -25,11 +26,13 @@ const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam, setSnackbarMe
       return;
     }
 
+    axios
+      .post(`${process.env.REACT_APP_BACKEND_URL}/projects/${pid}/team/${user.user_id}`);
     setTeam(team.concat(user).sort(
       (a, b) => a.user_id > b.user_id ? 1 : -1
     ))
     setSnackbarMessage(
-      `${user.first_name} ${user.last_name} added to the project.`
+      `${user.first_name} ${user.last_name} added to this project.`
     )
   }
 
@@ -52,7 +55,7 @@ const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam, setSnackbarMe
         <TextField
           value={search}
           onChange={e => setSearch(e.target.value)}
-          label='Search'
+          label='Filter'
           variant='outlined'
           fullWidth
         />

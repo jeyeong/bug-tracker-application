@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import AddMemberDialog from './AddMemberDialog.js';
 import { SnackbarAlert } from '../../../Auxiliary';
 
-const AddMembers = ({ team, setTeam }) => {
+const AddMembers = ({ team, setTeam, pid }) => {
   const [open, setOpen] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
   const [snackbarMessage, setSnackbarMessage] = useState('');
@@ -31,6 +31,7 @@ const AddMembers = ({ team, setTeam }) => {
         allUsers={allUsers}
         team={team}
         setTeam={setTeam}
+        pid={pid}
         setSnackbarMessage={setSnackbarMessage}
       />
       <SnackbarAlert

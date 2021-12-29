@@ -90,6 +90,7 @@ const Members = ({ team, setTeam, pid }) => {
         </div>
       </div>
     </div>
+
     <SnackbarAlert
       message={snackbarMessage}
       setMessage={setSnackbarMessage}

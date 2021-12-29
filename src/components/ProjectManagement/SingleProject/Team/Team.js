@@ -12,7 +12,7 @@ const Team = ({ team, setTeam, pid }) => {
         <div className='projmgmt-s-team__title'>
           <GroupsIcon sx={{fontSize: 25}} />
           <span>Team</span>
-          <AddMembers team={team} setTeam={setTeam} />
+          <AddMembers team={team} setTeam={setTeam} pid={pid} />
         </div>
         <Members team={team} setTeam={setTeam} pid={pid} />
       </div>
