@@ -11,7 +11,11 @@ const groupByRole = team => {
     'Submitter': [],
   };
 
-  team.forEach(member => rv[member.role].push(member));
+  team.forEach(mem => {
+    if (mem.role) {
+      rv[mem.role].push(mem);
+    }
+  });
 
   return rv;
 };
