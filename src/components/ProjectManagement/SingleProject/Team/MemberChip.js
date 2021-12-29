@@ -19,7 +19,7 @@ const MemberChip = (props) => {
   const deleteMember = () => {
     axios.delete(`${process.env.REACT_APP_BACKEND_URL}/projects/${pid}/team/${id}`);
     setTeam(team.filter(mem => mem.user_id !== id));
-    setSnackbarMessage(`${name} deleted from this project.`);
+    setSnackbarMessage(`${name} deleted from the project.`);
   }
 
   const handleDeleteAttempt = () => setOpenDialog(true);

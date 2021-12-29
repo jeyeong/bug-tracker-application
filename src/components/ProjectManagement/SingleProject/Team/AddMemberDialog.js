@@ -32,7 +32,7 @@ const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam, pid, setSnack
       (a, b) => a.user_id > b.user_id ? 1 : -1
     ))
     setSnackbarMessage(
-      `${user.first_name} ${user.last_name} added to this project.`
+      `${user.first_name} ${user.last_name} added to the project.`
     )
   }
 
