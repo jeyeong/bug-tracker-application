@@ -8,12 +8,30 @@ import {
   Button,
 } from '@mui/material';
 
-const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam }) => {
+const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam, setSnackbarMessage }) => {
   const [search, setSearch] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleClose = () => setOpen(false);
   const handleListItemClick = (e, index) => setSelectedIndex(index);
+
+  const handleAdd = () => {
+    const user = filteredUsers[selectedIndex];
+
+    if (team.find(mem => mem.user_id === user.user_id)) {
+      setSnackbarMessage(
+        `${user.first_name} ${user.last_name} already part of project.`
+      )
+      return;
+    }
+
+    setTeam(team.concat(user).sort(
+      (a, b) => a.user_id > b.user_id ? 1 : -1
+    ))
+    setSnackbarMessage(
+      `${user.first_name} ${user.last_name} added to the project.`
+    )
+  }
 
   // Filter users by search term
   const re = new RegExp(search, 'i');
@@ -62,7 +80,9 @@ const AddMemberDialog = ({ open, setOpen, allUsers, team, setTeam }) => {
         </div>
 
         <div className='project-s-team__add-member'>
-          <Button variant='contained'>Add</Button>
+          <Button variant='contained' onClick={handleAdd}>
+            Add
+          </Button>
         </div>
       </div>
     </Dialog>

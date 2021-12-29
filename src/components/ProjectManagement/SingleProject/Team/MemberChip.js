@@ -16,10 +16,10 @@ const MemberChip = (props) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   // Callback function for deletion, to be used by the confirmation dialog
-  const deleteMember = async () => {
+  const deleteMember = () => {
     axios.delete(`${process.env.REACT_APP_BACKEND_URL}/projects/${pid}/team/${id}`);
     setTeam(team.filter(mem => mem.user_id !== id));
-    setSnackbarMessage(`${name} deleted from project.`);
+    setSnackbarMessage(`${name} deleted from the project.`);
   }
 
   const handleDeleteAttempt = () => setOpenDialog(true);
