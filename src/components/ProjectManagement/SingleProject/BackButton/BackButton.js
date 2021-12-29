@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 
-import './SPBackButton.css';
+import './BackButton.css';
 
-const SPBackButton = () => {
+const BackButton = () => {
   return (
     <Link to='/manage-projects'>
       <Button
@@ -17,4 +17,4 @@ const SPBackButton = () => {
   );
 }
 
-export default SPBackButton;
+export default BackButton;

@@ -3,9 +3,9 @@ import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
 import {
-  SPBackButton,
-  SPNameDescription,
-  SPTeam,
+  BackButton,
+  NameDescription,
+  Team,
 } from '../../components/ProjectManagement';
 
 import './SingleProject.css';
@@ -47,14 +47,14 @@ const SingleProject = ({ id }) => {
   // Project
   return (
     <div className='projmgmt-s'>
-      <SPBackButton />
-      <SPNameDescription
+      <BackButton />
+      <NameDescription
         name={project.name}
         description={project.description}
         project={project}
         setProject={setProject}
       />
-      <SPTeam
+      <Team
         team={team}
         setTeam={setTeam}
         pid={id}

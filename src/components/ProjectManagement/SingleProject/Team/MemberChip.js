@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { ConfirmationDialog } from '../../Auxiliary';
+import { ConfirmationDialog } from '../../../Auxiliary';
 
 const MemberChip = (props) => {
   const {

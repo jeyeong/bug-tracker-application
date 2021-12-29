@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MemberChip from './MemberChip';
-import { SnackbarAlert } from '../../Auxiliary';
+import { SnackbarAlert } from '../../../Auxiliary';
 
 // Helper function that groups the team member array by role
 const groupByRole = team => {

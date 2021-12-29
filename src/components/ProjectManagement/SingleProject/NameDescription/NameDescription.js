@@ -2,9 +2,9 @@ import React from 'react';
 import ProjectName from './ProjectName';
 import ProjectDescription from './ProjectDescription';
 
-import './SPNameDescription.css';
+import './NameDescription.css';
 
-const SPNameDescription = ({ name, description, project, setProject }) => {
+const NameDescription = ({ name, description, project, setProject }) => {
   return (
     <>
       <ProjectName
@@ -21,4 +21,4 @@ const SPNameDescription = ({ name, description, project, setProject }) => {
   );
 }
 
-export default SPNameDescription;
+export default NameDescription;

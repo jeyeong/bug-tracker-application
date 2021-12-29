@@ -2,9 +2,9 @@ import React from 'react';
 import GroupsIcon from '@mui/icons-material/Groups';
 import Members from './Members';
 
-import './SPTeam.css';
+import './Team.css';
 
-const SPTeam = ({ team, setTeam, pid }) => {
+const Team = ({ team, setTeam, pid }) => {
   return (
     <>
       <div className='projmgmt-s-team'>
@@ -18,4 +18,4 @@ const SPTeam = ({ team, setTeam, pid }) => {
   );
 }
 
-export default SPTeam;
+export default Team;
