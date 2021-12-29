@@ -12,10 +12,57 @@
   margin-top: -1.5px;
 }
 
-.projmgmt-s-team__title span {
+.projmgmt-s-team__title > span {
   font-size: 1.1rem;
   font-weight: 600;
   margin-left: 0.4rem;
+}
+
+/* Add members */
+
+.project-s-team__add-dialog {
+  margin: 2rem 2rem 1.5rem 2rem;
+  display: relative;
+}
+
+.projmgmt-s-team__close-dialog {
+  position: absolute;
+  top: -1px;
+  right: 5px;
+  height: 25px;
+  width: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.project-s-team__filtered-users {
+  margin-top: 1rem;
+  height: 200px;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.project-s-team__filtered-users > div {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.project-s-team__filtered-users ul {
+  padding: 0;
+}
+
+.project-s-team__add-member {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-s-team__add-member button {
+  text-transform: none !important;
 }
 
 /* Members */
