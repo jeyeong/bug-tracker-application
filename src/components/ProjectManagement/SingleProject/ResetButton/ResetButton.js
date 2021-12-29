@@ -5,6 +5,10 @@ import { Button } from '@mui/material';
 import './ResetButton.css';
 
 const ResetButton = ({ id, setProject, setTeam }) => {
+  if (id !== '1' && id !== '2') {
+    return null;
+  }
+
   const handleReset = async () => {
     await axios.put(`${process.env.REACT_APP_BACKEND_URL}/projects/reset/${id}`);
 

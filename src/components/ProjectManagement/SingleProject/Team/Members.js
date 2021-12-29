@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import MemberChip from './MemberChip';
-import { SnackbarAlert } from '../../../Auxiliary';
 
 // Helper function that groups the team member array by role
 const groupByRole = team => {
@@ -20,9 +19,7 @@ const groupByRole = team => {
   return rv;
 };
 
-const Members = ({ team, setTeam, project, setProject }) => {
-  const [snackbarMessage, setSnackbarMessage] = useState('');
-
+const Members = ({ team, setTeam, project, setProject, setSnackbarMessage }) => {
   const groupedMembers = groupByRole(team);
 
   return (
@@ -98,11 +95,6 @@ const Members = ({ team, setTeam, project, setProject }) => {
         </div>
       </div>
     </div>
-
-    <SnackbarAlert
-      message={snackbarMessage}
-      setMessage={setSnackbarMessage}
-    />
     </>
   );
 }

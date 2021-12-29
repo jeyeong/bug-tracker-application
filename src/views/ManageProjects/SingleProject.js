@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
+import { SnackbarAlert } from '../../components/Auxiliary';
 import {
   BackButton,
   ResetButton,
@@ -35,6 +36,9 @@ const SingleProject = ({ id }) => {
       });
   }, [id]);
 
+  // Snackbar
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+
   // Loading screen
   if (appIsLoading) {
     return <LoadingScreen />;
@@ -50,14 +54,11 @@ const SingleProject = ({ id }) => {
     <div className='projmgmt-s'>
       <div className='projmgmt-s__top-buttons'>
         <BackButton />
-        {id === '1' || id === '2'
-          ? <ResetButton
-              id={id}
-              setProject={setProject}
-              setTeam={setTeam}
-            />
-          : null
-        }
+        <ResetButton
+          id={id}
+          setProject={setProject}
+          setTeam={setTeam}
+        />
       </div>
       <NameDescription
         name={project.name}
@@ -70,6 +71,11 @@ const SingleProject = ({ id }) => {
         setTeam={setTeam}
         project={project}
         setProject={setProject}
+        setSnackbarMessage={setSnackbarMessage}
+      />
+      <SnackbarAlert
+        message={snackbarMessage}
+        setMessage={setSnackbarMessage}
       />
     </div>
   );

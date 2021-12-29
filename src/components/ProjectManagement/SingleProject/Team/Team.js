@@ -5,7 +5,7 @@ import Members from './Members';
 
 import './Team.css';
 
-const Team = ({ team, setTeam, project, setProject }) => {
+const Team = ({ team, setTeam, project, setProject, setSnackbarMessage }) => {
   return (
     <>
       <div className='projmgmt-s-team'>
@@ -16,6 +16,7 @@ const Team = ({ team, setTeam, project, setProject }) => {
             team={team}
             setTeam={setTeam}
             pid={project.project_id}
+            setSnackbarMessage={setSnackbarMessage}
           />
         </div>
         <Members
@@ -23,6 +24,7 @@ const Team = ({ team, setTeam, project, setProject }) => {
           setTeam={setTeam}
           project={project}
           setProject={setProject}
+          setSnackbarMessage={setSnackbarMessage}
         />
       </div>
     </>

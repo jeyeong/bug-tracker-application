@@ -3,12 +3,10 @@ import axios from 'axios';
 import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import AddMemberDialog from './AddMemberDialog.js';
-import { SnackbarAlert } from '../../../Auxiliary';
 
-const AddMembers = ({ team, setTeam, pid }) => {
+const AddMembers = ({ team, setTeam, pid, setSnackbarMessage }) => {
   const [open, setOpen] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
-  const [snackbarMessage, setSnackbarMessage] = useState('');
 
   useEffect(() => {
     axios
@@ -33,10 +31,6 @@ const AddMembers = ({ team, setTeam, pid }) => {
         setTeam={setTeam}
         pid={pid}
         setSnackbarMessage={setSnackbarMessage}
-      />
-      <SnackbarAlert
-        message={snackbarMessage}
-        setMessage={setSnackbarMessage}
       />
     </div>
   );
