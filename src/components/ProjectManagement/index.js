@@ -4,6 +4,7 @@ import BackButton from './SingleProject/BackButton/BackButton';
 import ResetButton from './SingleProject/ResetButton/ResetButton';
 import NameDescription from './SingleProject/NameDescription/NameDescription';
 import Team from './SingleProject/Team/Team';
+import DeleteProject from './SingleProject/DeleteProject/DeleteProject';
 
 export {
   CreateProject,
@@ -12,4 +13,5 @@ export {
   ResetButton,
   NameDescription,
   Team,
+  DeleteProject,
 };

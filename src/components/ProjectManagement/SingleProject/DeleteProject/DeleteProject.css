@@ -1,0 +1,12 @@
+.projmgmt-s-delete {
+  margin-top: 1.75rem;
+}
+
+.projmgmt-s-delete button {
+  background-color: rgb(255, 0, 0);
+  text-transform: none !important;
+}
+
+.projmgmt-s-delete button:hover {
+  background-color: rgb(221, 4, 4);
+}

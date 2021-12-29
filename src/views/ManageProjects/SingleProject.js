@@ -8,6 +8,7 @@ import {
   ResetButton,
   NameDescription,
   Team,
+  DeleteProject
 } from '../../components/ProjectManagement';
 
 import './SingleProject.css';
@@ -76,6 +77,10 @@ const SingleProject = ({ id }) => {
       <SnackbarAlert
         message={snackbarMessage}
         setMessage={setSnackbarMessage}
+      />
+      <DeleteProject
+        id={id}
+        setSnackbarMessage={setSnackbarMessage}
       />
     </div>
   );
