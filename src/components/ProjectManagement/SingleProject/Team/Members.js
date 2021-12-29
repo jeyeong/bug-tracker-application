@@ -20,7 +20,7 @@ const groupByRole = team => {
   return rv;
 };
 
-const Members = ({ team, setTeam, pid }) => {
+const Members = ({ team, setTeam, project, setProject }) => {
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
   const groupedMembers = groupByRole(team);
@@ -38,7 +38,8 @@ const Members = ({ team, setTeam, pid }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
-              pid={pid}
+              project={project}
+              setProject={setProject}
               setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />
@@ -50,7 +51,8 @@ const Members = ({ team, setTeam, pid }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
-              pid={pid}
+              project={project}
+              setProject={setProject}
               setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />
@@ -68,7 +70,8 @@ const Members = ({ team, setTeam, pid }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
-              pid={pid}
+              project={project}
+              setProject={setProject}
               setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />
@@ -86,7 +89,8 @@ const Members = ({ team, setTeam, pid }) => {
               id={m.user_id}
               team={team}
               setTeam={setTeam}
-              pid={pid}
+              project={project}
+              setProject={setProject}
               setSnackbarMessage={setSnackbarMessage}
               key={m.user_id}
             />

@@ -68,7 +68,8 @@ const SingleProject = ({ id }) => {
       <Team
         team={team}
         setTeam={setTeam}
-        pid={id}
+        project={project}
+        setProject={setProject}
       />
     </div>
   );

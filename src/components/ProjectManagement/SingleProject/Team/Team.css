@@ -136,3 +136,27 @@
   padding-bottom: 1px;
   cursor: pointer;
 }
+
+.projmgmt-s-team__lead-badge-main,
+.projmgmt-s-team__lead-badge {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.projmgmt-s-team__lead-badge-main {
+  background-color: blue;
+}
+
+.projmgmt-s-team__lead-badge {
+  background-color: #aaa;
+}

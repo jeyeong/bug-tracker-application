@@ -1,10 +1,10 @@
 .projmgmt-s__reset-btn {
-  margin-left: 1rem;
+  margin-left: 1rem !important;
   max-width: 60px;
   text-transform: none !important;
   font-size: 12.5px !important;
   letter-spacing: 0.4px;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .projmgmt-s__reset-btn:hover {
