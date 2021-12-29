@@ -4,6 +4,7 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
 import {
   BackButton,
+  ResetButton,
   NameDescription,
   Team,
 } from '../../components/ProjectManagement';
@@ -47,7 +48,17 @@ const SingleProject = ({ id }) => {
   // Project
   return (
     <div className='projmgmt-s'>
-      <BackButton />
+      <div className='projmgmt-s__top-buttons'>
+        <BackButton />
+        {id === '1' || id === '2'
+          ? <ResetButton
+              id={id}
+              setProject={setProject}
+              setTeam={setTeam}
+            />
+          : null
+        }
+      </div>
       <NameDescription
         name={project.name}
         description={project.description}
