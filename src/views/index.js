@@ -3,7 +3,7 @@ import LoginPage from './LoginPage/LoginPage';
 import Dashboard from './Dashboard/Dashboard';
 import ManageUsers from './ManageUsers/ManageUsers';
 import ManageProjects from './ManageProjects/ManageProjects';
-import Projects from './MyProjects/Projects';
+import MyProjects from './MyProjects/MyProjects';
 import Tickets from './MyTickets/Tickets';
 import NavbarWrapper from './Navbar/NavbarWrapper';
 
@@ -13,7 +13,7 @@ export {
   Dashboard,
   ManageUsers,
   ManageProjects,
-  Projects,
+  MyProjects,
   Tickets,
   NavbarWrapper,
 };

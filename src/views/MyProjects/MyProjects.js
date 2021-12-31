@@ -5,7 +5,7 @@ import { ProjectCard } from '../../components/MyProjects';
 import SingleProject from './SingleProject';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
-import './Projects.css';
+import './MyProjects.css';
 
 const AllProjects = ({ id }) => {
   // Get data from backend API
@@ -38,7 +38,7 @@ const AllProjects = ({ id }) => {
   );
 }
 
-const Projects = ({ id }) => {
+const MyProjects = ({ id }) => {
   let [searchParams] = useSearchParams();
 
   // Single project
@@ -50,4 +50,4 @@ const Projects = ({ id }) => {
   return <AllProjects id={id} />
 }
 
-export default Projects;
+export default MyProjects;

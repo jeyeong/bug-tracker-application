@@ -17,12 +17,20 @@ const SingleProject = ({ id }) => {
   const [appIsLoading, setAppIsLoading] = useState(true);
 
   useEffect(() => {
+    // Clean up controller
+    let isSubscribed = true;
+
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/projects/${id}`)
       .then(res => {
-        setProject(res?.data);
-        setAppIsLoading(false);
+        if (isSubscribed) {
+          setProject(res?.data);
+          setAppIsLoading(false);
+        }
       });
+    
+    // Cancel subscription to useEffect
+    return () => (isSubscribed = false);
   }, [id]);
 
   // Loading screen
@@ -40,7 +48,7 @@ const SingleProject = ({ id }) => {
       <BackButton />
       <div className='project__name'>
         <span>{project.name}</span>
-        <CreateTicket />
+        <CreateTicket uid={id} pid={project.project_id} />
       </div>
       <span className='project__description'>{project.description}</span>
       <Tickets />

@@ -13,14 +13,12 @@ const CreateDialog = ({ open, setOpen, projects, setProjects }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
 
-  const handleNameChange = e => setName(e.target.value);
-  const handleDescriptionChange = e => setDescription(e.target.value);
   const handleClose = () => setOpen(false);
 
   const handleCreate = () => {
     axios
       .post(
-        `${process.env.REACT_APP_BACKEND_URL}/projects/`,
+        `${process.env.REACT_APP_BACKEND_URL}/projects`,
         { name: name, description: description }
       )
       .then(res => {
@@ -42,16 +40,16 @@ const CreateDialog = ({ open, setOpen, projects, setProjects }) => {
       <DialogContent>
         <TextField
           value={name}
-          onChange={handleNameChange}
+          onChange={e => setName(e.target.value)}
           margin='dense'
-          label="Name"
+          label='Name'
           type='text'
           fullWidth
         />
         <TextField
           multiline
           value={description}
-          onChange={handleDescriptionChange}
+          onChange={e => setDescription(e.target.value)}
           margin='normal'
           label='Description'
           type='text'
