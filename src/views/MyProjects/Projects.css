@@ -1,0 +1,32 @@
+.projects {
+  width: 100%;
+  padding: 1.75rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects__title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.projects__cards {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 35px;
+  max-width: 750px;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .projects {
+    padding: 1.5rem;
+  }
+
+  .projects__cards {
+    row-gap: 30px;
+  }
+}

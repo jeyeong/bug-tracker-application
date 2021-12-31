@@ -1,0 +1,14 @@
+.project-tickets {
+  margin-top: 1.5rem;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-tickets > div {
+  width: 30%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+}
