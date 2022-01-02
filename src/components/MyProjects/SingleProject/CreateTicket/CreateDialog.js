@@ -67,7 +67,7 @@ const CreateDialog = ({ open, setOpen, uid, pid, setSnackbarMessage }) => {
           margin='normal'
           label='Description'
           type='text'
-          rows={5}
+          rows={4}
           fullWidth
         />
         <TextField

@@ -1,14 +1,52 @@
 .project-tickets {
-  margin-top: 1.5rem;
-  width: 600px;
-  height: 300px;
+  margin-top: 1.75rem;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  row-gap: 35px;
 }
 
-.project-tickets > div {
-  width: 30%;
-  height: 100%;
-  border: 1px solid black;
+.project-tickets__panel {
+  width: 250px;
+  height: 300px;
+  box-shadow: 0 2px 8px #aaa;
   border-radius: 8px;
+  text-align: center;
+  padding: 0.5rem 1.25rem;
+}
+
+.project-tickets__panel-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Ticket list */
+
+.project-tickets__list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.7rem;
+  height: 240px;
+  overflow-y: auto;
+}
+
+.project-tickets__list::-webkit-scrollbar {
+  width: 5px;
+  background-color: #bbb;
+}
+
+.project-tickets__list::-webkit-scrollbar-thumb {
+  background-color: #444;
+}
+
+.project-tickets__list-item {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px #888;
+  font-size: 13.5px;
+  padding: 0.25rem 0.75rem;
+  background-color: #ff7043;
+  cursor: pointer;
 }
