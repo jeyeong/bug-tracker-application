@@ -16,31 +16,54 @@ const priorities = [
   'Critical',
 ]
 
-const CreateDialog = ({ open, setOpen, uid, pid, setSnackbarMessage }) => {
+const CreateDialog = (props) => {
+  const {
+    open,
+    setOpen,
+    pid,
+    uid,
+    tickets,
+    setTickets,
+    setSnackbarMessage,
+  } = props;
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState(priorities[0]);
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setTitle('');
+    setDescription('');
+    setPriority(priorities[0]);
+  }
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     if (title === '') {
       setSnackbarMessage('Error: Please enter a ticket title.');
       return;
     }
 
-    axios
-      .post(
-        `${process.env.REACT_APP_BACKEND_URL}/tickets`,
-        {
-          project_id: pid,
-          title: title,
-          description: description,
-          priority: priority,
-          submitter_id: uid,
-        }
-      )
-      .then(res => {})
+    const res = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/tickets`,
+      {
+        project_id: pid,
+        title: title,
+        description: description,
+        priority: priority,
+        submitter_id: uid,
+      }
+    );
+
+    const newTicketID = res.data.ticket_id;
+
+    setTickets(tickets.concat({
+      ticket_id: newTicketID,
+      title: title,
+      priority: priority,
+    }));
+
+    handleClose();
   };
 
   return (

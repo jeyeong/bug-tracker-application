@@ -7,19 +7,19 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 import './MyProjects.css';
 
-const AllProjects = ({ id }) => {
+const AllProjects = ({ uid }) => {
   // Get data from backend API
   const [projects, setProjects] = useState(undefined);
   const [appIsLoading, setAppIsLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/projects/user/${id}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/projects/user/${uid}`)
       .then(res => {
         setProjects(res?.data);
         setAppIsLoading(false);
       });
-  }, [id]);
+  }, [uid]);
 
   // Loading screen
   if (appIsLoading) {
@@ -38,16 +38,16 @@ const AllProjects = ({ id }) => {
   );
 }
 
-const MyProjects = ({ id }) => {
+const MyProjects = ({ uid }) => {
   let [searchParams] = useSearchParams();
 
   // Single project
   const project_id = searchParams.get('id')
   if (project_id) {
-    return <SingleProject id={project_id} />;
+    return <SingleProject pid={project_id} uid={uid} />;
   }
 
-  return <AllProjects id={id} />
+  return <AllProjects uid={uid} />
 }
 
 export default MyProjects;

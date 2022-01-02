@@ -1,14 +1,18 @@
 import React from 'react';
 
-const TicketList = () => {
+const TicketList = ({ type, tickets }) => {
   return (
-    <div className='project-tickets__list'>
-      <span className='project-tickets__list-item'>
-        #13 | Fix Div Header on Landing Page
-      </span>
-      <span className='project-tickets__list-item'>
-        #17 | Fix Span Text on Landing Page
-      </span>
+    <div className='project-tickets__list' id={`ticket-list__${type}`}>
+      {
+        tickets.map(t => (
+          <span
+            className='project-tickets__list-item'
+            key={t.ticket_id}
+          >
+            {`(#${t.ticket_id}) ${t.title}`}
+          </span>
+        ))
+      }
     </div>
   );
 }

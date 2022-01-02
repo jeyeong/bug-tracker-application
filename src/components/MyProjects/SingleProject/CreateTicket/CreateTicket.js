@@ -5,7 +5,7 @@ import { SnackbarAlert } from '../../../Auxiliary';
 
 import './CreateTicket.css';
 
-const CreateTicket = ({ uid, pid }) => {
+const CreateTicket = ({ tickets, setTickets, pid, uid }) => {
   const [openDialog, setOpenDialog] = useState(false);
   
   // Snackbar
@@ -23,8 +23,10 @@ const CreateTicket = ({ uid, pid }) => {
       <CreateDialog
         open={openDialog}
         setOpen={setOpenDialog}
-        uid={uid}
         pid={pid}
+        uid={uid}
+        tickets={tickets}
+        setTickets={setTickets}
         setSnackbarMessage={setSnackbarMessage}
       />
       <SnackbarAlert

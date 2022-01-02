@@ -12,7 +12,7 @@
   box-shadow: 0 2px 8px #aaa;
   border-radius: 8px;
   text-align: center;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1rem;
 }
 
 .project-tickets__panel-title {
@@ -27,7 +27,8 @@
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  row-gap: 0.7rem;
+  align-items: center;
+  row-gap: 0.75rem;
   height: 240px;
   overflow-y: auto;
 }
@@ -41,12 +42,31 @@
   background-color: #444;
 }
 
+#ticket-list__critical span {
+  background-color: #f8756ef3;
+}
+
+#ticket-list__medium span {
+  background-color: #ffca28;
+}
+
+#ticket-list__low span {
+  background-color: #ffec43;
+}
+
 .project-tickets__list-item {
-  width: 100%;
-  border-radius: 8px;
+  width: 92.5%;
+  border-radius: 6px;
   box-shadow: 0 1px 3px #888;
   font-size: 13.5px;
   padding: 0.25rem 0.75rem;
-  background-color: #ff7043;
   cursor: pointer;
+  max-height: 48.5px;
+
+  /* two line ellipsis */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

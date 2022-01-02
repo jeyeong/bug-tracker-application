@@ -10,7 +10,7 @@ import {
 
 import './SingleProject.css';
 
-const SingleProject = ({ id }) => {
+const SingleProject = ({ pid, uid }) => {
   // Get data from backend API
   const [project, setProject] = useState(undefined);
   const [tickets, setTickets] = useState(undefined);
@@ -20,18 +20,29 @@ const SingleProject = ({ id }) => {
     // Clean up controller
     let isSubscribed = true;
 
+    let counter = 2;
+
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/projects/${id}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/projects/${pid}`)
       .then(res => {
         if (isSubscribed) {
           setProject(res?.data);
-          setAppIsLoading(false);
+          if (--counter === 0) setAppIsLoading(false);
+        }
+      });
+
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/tickets/${pid}`)
+      .then(res => {
+        if (isSubscribed) {
+          setTickets(res?.data);
+          if (--counter === 0) setAppIsLoading(false);
         }
       });
     
     // Cancel subscription to useEffect
     return () => (isSubscribed = false);
-  }, [id]);
+  }, [pid]);
 
   // Loading screen
   if (appIsLoading) {
@@ -48,10 +59,17 @@ const SingleProject = ({ id }) => {
       <BackButton />
       <div className='project__name'>
         <span>{project.name}</span>
-        <CreateTicket uid={id} pid={project.project_id} />
+        <CreateTicket
+          tickets={tickets}
+          setTickets={setTickets}
+          pid={pid}
+          uid={uid}
+        />
       </div>
-      <span className='project__description'>{project.description}</span>
-      <Tickets />
+      <span className='project__description'>
+        {project.description}
+      </span>
+      <Tickets tickets={tickets} />
     </div>
   );
 }
