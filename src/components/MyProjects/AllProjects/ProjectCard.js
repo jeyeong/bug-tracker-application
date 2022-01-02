@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 import './ProjectCard.css';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, ticketCounts }) => {
   return (
     <Link
-      to={`/projects?id=${project.project_id ?? ''}`}
+      to={`/projects?id=${project.project_id || ''}`}
       className='projects-card__link-wrapper'
     >
     <div className='projects-card'>
@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
             CRITICAL
           </span>
           <span className='projects-card__ticket-count'>
-            10
+            {ticketCounts['Critical']}
           </span>
         </div>
         <div className='projects-card__ticket projects-card__ticket__medium'>
@@ -25,7 +25,7 @@ const ProjectCard = ({ project }) => {
             MEDIUM
           </span>
           <span className='projects-card__ticket-count'>
-            15
+            {ticketCounts['Medium']}
           </span>
         </div>
         <div className='projects-card__ticket projects-card__ticket__low'>
@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
             LOW
           </span>
           <span className='projects-card__ticket-count'>
-            5
+            {ticketCounts['Low']}
           </span>
         </div>
       </div>
