@@ -1,6 +1,8 @@
 # Bug Tracker Application (Front End)
 
-Inspired by Coder Foundry on YouTube.
+Inspired by Coder Foundry.
+
+Deployed at: https://bug-tracker-james.web.app/
 
 To clone and run this React app:
 1. *git clone https://github.com/jeyeong/Bug-Tracker-Application.git*
