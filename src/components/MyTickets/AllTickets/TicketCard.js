@@ -1,25 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 
 import './TicketCard.css';
 
-const TicketCard = () => {
+const TicketCard = ({ ticket }) => {
   return (
     <div className='ticket-card'>
       <div>
         <div className='ticket-card__id'>
-          #153
+          {`#${ticket.ticket_id}`}
         </div>
         <div className='ticket-card__title'>
-          Ticket title
+          {ticket.title}
         </div>
       </div>
-      <Button
-        variant='contained' 
-        className='ticket-card__details'
+      <Link
+        to={`/tickets?id=${ticket.ticket_id || ''}`}
       >
-        Details
-      </Button>
+        <Button
+          variant='contained' 
+          className='ticket-card__details'
+        >
+          Details
+        </Button>
+      </Link>
     </div>
   );
 }

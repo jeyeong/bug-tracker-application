@@ -66,7 +66,7 @@ const App = () => {
             <Route path='/manage-users' element={<ManageUsers role={role} />} />
             <Route path='/manage-projects' element={<ManageProjects role={role} />} />
             <Route path='/projects' element={<MyProjects uid={userID} />} />
-            <Route path='/tickets' element={<MyTickets />} />
+            <Route path='/tickets' element={<MyTickets uid={userID} />} />
           </Routes>
         </CustomTheme>
       </NavbarWrapper>
