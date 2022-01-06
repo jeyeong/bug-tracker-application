@@ -1,0 +1,26 @@
+.tickets {
+  width: 100%;
+  padding: 1.75rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tickets__title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.tickets__list {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .tickets {
+    padding: 1.5rem;
+  }
+}

@@ -3,12 +3,7 @@
 }
 
 .projmgmt-create__button {
-  background-color: #2196f3 !important;
   font-size: 12.5px;
   text-transform: none !important;
   letter-spacing: 0.3px;
-}
-
-.projmgmt-create__button:hover {
-  background-color: #1e88e5 !important;
 }

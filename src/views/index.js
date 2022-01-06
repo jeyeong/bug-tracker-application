@@ -4,7 +4,7 @@ import Dashboard from './Dashboard/Dashboard';
 import ManageUsers from './ManageUsers/ManageUsers';
 import ManageProjects from './ManageProjects/ManageProjects';
 import MyProjects from './MyProjects/MyProjects';
-import Tickets from './MyTickets/Tickets';
+import MyTickets from './MyTickets/MyTickets';
 import NavbarWrapper from './Navbar/NavbarWrapper';
 
 export {
@@ -14,6 +14,6 @@ export {
   ManageUsers,
   ManageProjects,
   MyProjects,
-  Tickets,
+  MyTickets,
   NavbarWrapper,
 };

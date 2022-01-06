@@ -75,7 +75,7 @@ const MyProjects = ({ uid }) => {
   let [searchParams] = useSearchParams();
 
   // Single project
-  const project_id = searchParams.get('id')
+  const project_id = searchParams.get('id');
   if (project_id) {
     return <SingleProject pid={project_id} uid={uid} />;
   }

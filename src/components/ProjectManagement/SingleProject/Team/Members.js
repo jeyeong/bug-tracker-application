@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MemberChip from './MemberChip';
 
 // Helper function that groups the team member array by role

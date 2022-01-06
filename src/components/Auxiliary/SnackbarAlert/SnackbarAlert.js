@@ -18,7 +18,7 @@ const SnackbarAlert = ({ message, setMessage }) => {
       return;
     }
     setTimeout(() => setMessage(''), 250);
-  }, [open]);
+  }, [open, setMessage]);
 
   const handleClose = () => setOpen(false);
 

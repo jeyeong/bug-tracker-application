@@ -14,7 +14,7 @@ import {
   ManageUsers,
   ManageProjects,
   MyProjects,
-  Tickets,
+  MyTickets,
   NavbarWrapper,
 } from './views';
 
@@ -66,7 +66,7 @@ const App = () => {
             <Route path='/manage-users' element={<ManageUsers role={role} />} />
             <Route path='/manage-projects' element={<ManageProjects role={role} />} />
             <Route path='/projects' element={<MyProjects uid={userID} />} />
-            <Route path='/tickets' element={<Tickets />} />
+            <Route path='/tickets' element={<MyTickets />} />
           </Routes>
         </CustomTheme>
       </NavbarWrapper>
