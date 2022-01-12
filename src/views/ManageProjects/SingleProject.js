@@ -47,7 +47,7 @@ const SingleProject = ({ id }) => {
 
   // Project not found (most likely an invalid ID)
   if (!project) {
-    return <ResourceNotFound resourceName='Project' />
+    return <ResourceNotFound resourceName='Project' />;
   }
 
   // Project
