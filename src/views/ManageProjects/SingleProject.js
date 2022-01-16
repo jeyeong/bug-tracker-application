@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
-import { SnackbarAlert } from '../../components/Auxiliary';
+import { BackButton, SnackbarAlert } from '../../components/Auxiliary';
 import {
-  BackButton,
   ResetButton,
   NameDescription,
   Team,
@@ -54,7 +53,9 @@ const SingleProject = ({ id }) => {
   return (
     <div className='projmgmt-s'>
       <div className='projmgmt-s__top-buttons'>
-        <BackButton />
+        <BackButton
+          link='/manage-projects'
+        />
         <ResetButton
           id={id}
           setProject={setProject}

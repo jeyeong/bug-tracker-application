@@ -4,9 +4,9 @@ import { Button } from '@mui/material';
 
 import './BackButton.css';
 
-const BackButton = () => {
+const BackButton = ({ link }) => {
   return (
-    <Link to='/manage-projects'>
+    <Link to={link}>
       <Button
         variant='contained' 
         className='projmgmt-s__back-btn'
