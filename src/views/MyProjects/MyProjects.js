@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { ProjectCard } from '../../components/MyProjects';
 import SingleProject from './SingleProject';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import SingleTicket from '../MyTickets/SingleTicket';
 
 import './MyProjects.css';
 
@@ -75,9 +76,25 @@ const MyProjects = ({ uid }) => {
   let [searchParams] = useSearchParams();
 
   // Single project
-  const project_id = searchParams.get('id');
-  if (project_id) {
-    return <SingleProject pid={project_id} uid={uid} />;
+  const projectID = searchParams.get('id');
+  const ticketID = searchParams.get('tid');
+
+  if (projectID && ticketID) {
+    return (
+      <SingleTicket
+        tid={ticketID}
+        returnLink={`/projects?id=${projectID}`}
+      />
+    );
+  }
+
+  if (projectID) {
+    return (
+      <SingleProject
+        pid={projectID}
+        uid={uid}
+      />
+    );
   }
 
   return <AllProjects uid={uid} />

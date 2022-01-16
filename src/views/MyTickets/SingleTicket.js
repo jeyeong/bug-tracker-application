@@ -12,7 +12,7 @@ import {
 
 import './SingleTicket.css';
 
-const SingleTicket = ({ tid }) => {
+const SingleTicket = ({ tid, returnLink }) => {
   // Get data from backend API
   const [ticket, setTicket] = useState(undefined);
   const [appIsLoading, setAppIsLoading] = useState(true);
@@ -50,7 +50,7 @@ const SingleTicket = ({ tid }) => {
     <div className='ticket'>
       <div className='ticket__top-buttons'>
         <BackButton
-          link='/tickets'
+          link={returnLink || '/tickets'} // for reusage
         />
         <ResolvedButton
           ticket={ticket}
@@ -68,7 +68,7 @@ const SingleTicket = ({ tid }) => {
       />
       <DeleteTicket
         id={ticket.ticket_id}
-        link='/tickets'
+        link={returnLink || '/tickets'} // for reusage
       />
       <SnackbarAlert
         message={snackbarMessage}
