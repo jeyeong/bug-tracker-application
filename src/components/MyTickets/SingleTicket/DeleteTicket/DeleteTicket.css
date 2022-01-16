@@ -1,0 +1,12 @@
+.ticket__delete {
+  margin-top: 1.75rem;
+}
+
+.ticket__delete button {
+  background-color: rgb(240, 0, 0);
+  text-transform: none !important;
+}
+
+.ticket__delete button:hover {
+  background-color: rgb(221, 4, 4);
+}

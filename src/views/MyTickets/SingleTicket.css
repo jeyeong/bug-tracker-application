@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.ticket__top-buttons {
+  display: flex;
+}
+
 /* Media queries */
 
 @media screen and (max-width: 768px) {

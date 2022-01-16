@@ -1,0 +1,23 @@
+.ticket__description {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ticket__description-box {
+  min-height: 140px;
+  width: 600px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px #aaa;
+  padding: 0.6rem 1rem;
+  font-size: 14.5px;
+  color: #222;
+}
+
+.ticket__description-edit {
+  position: relative;
+  top: -5px;
+  color: #222 !important;
+  margin-left: 3px !important;
+}

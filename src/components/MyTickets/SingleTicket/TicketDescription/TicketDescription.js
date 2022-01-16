@@ -11,38 +11,38 @@ import {
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
-const DescChangeDialog = ({ description, open, setOpen, project, setProject }) => {
-  const [newDesc, setNewDesc] = useState(description);
+import './TicketDescription.css';
 
-  const handleDescEdit = e => setNewDesc(e.target.value);
+const DescChangeDialog = ({ ticket, setTicket, open, setOpen }) => {
+  const [newDesc, setNewDesc] = useState(ticket.description);
 
   const handleClose = () => {
     setOpen(false);
-    setTimeout(() => setNewDesc(description), 250);
+    setTimeout(() => setNewDesc(ticket.description), 250);
   }
 
   const handleConfirm = async () => {
     axios.put(
-      `${process.env.REACT_APP_BACKEND_URL}/projects/change-desc/${project.project_id}`,
+      `${process.env.REACT_APP_BACKEND_URL}/tickets/change-desc/${ticket.ticket_id}`,
       { description: newDesc }
     );
 
-    setProject({ ...project, description: newDesc });
+    setTicket({ ...ticket, description: newDesc });
     setOpen(false);
   }
 
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm'>
-      <DialogTitle>Change project description</DialogTitle>
+      <DialogTitle>Change ticket description</DialogTitle>
       <DialogContent>
         <TextField
           multiline
           value={newDesc}
-          onChange={handleDescEdit}
+          onChange={e => setNewDesc(e.target.value)}
           margin='dense'
           label='Description'
           type='text'
-          rows={5}
+          rows={4}
           fullWidth
         />
       </DialogContent>
@@ -54,31 +54,30 @@ const DescChangeDialog = ({ description, open, setOpen, project, setProject }) =
   );
 }
 
-const ProjectDescription = ({ description, project, setProject }) => {
+const TicketDescription = ({ ticket, setTicket }) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (
-    <div className='projmgmt-s-desc'>
-      <div className='projmgmt-s-desc__box'>
-        {description}
+    <div className='ticket__description'>
+      <div className='ticket__description-box'>
+        {ticket.description || 'No description'}
       </div>
 
       <IconButton
-        className='projmgmt-s-desc__edit'
+        className='ticket__description-edit'
         onClick={() => setOpenDialog(true)}
       >
         <EditIcon />
       </IconButton>
 
       <DescChangeDialog
-        description={description}
+        ticket={ticket}
+        setTicket={setTicket}
         open={openDialog}
         setOpen={setOpenDialog}
-        project={project}
-        setProject={setProject}
       />
     </div>
   );
 }
 
-export default ProjectDescription;
+export default TicketDescription;

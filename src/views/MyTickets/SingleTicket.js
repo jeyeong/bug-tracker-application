@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
-import { TicketTitle } from '../../components/MyTickets';
 import { BackButton, SnackbarAlert } from '../../components/Auxiliary';
+import {
+  TicketTitle,
+  TicketDescription,
+  ResolvedButton,
+  DeleteTicket,
+} from '../../components/MyTickets';
 
 import './SingleTicket.css';
 
@@ -41,16 +46,33 @@ const SingleTicket = ({ tid }) => {
     return <ResourceNotFound resourceName='Ticket' />;
   }
 
-  console.log(ticket);
-
   return (
     <div className='ticket'>
-      <BackButton
-        link='/tickets'
-      />
+      <div className='ticket__top-buttons'>
+        <BackButton
+          link='/tickets'
+        />
+        <ResolvedButton
+          ticket={ticket}
+          setTicket={setTicket}
+          setSnackbarMessage={setSnackbarMessage}
+        />
+      </div>
       <TicketTitle
         ticket={ticket}
         setTicket={setTicket}
+      />
+      <TicketDescription
+        ticket={ticket}
+        setTicket={setTicket}
+      />
+      <DeleteTicket
+        id={ticket.ticket_id}
+        link='/tickets'
+      />
+      <SnackbarAlert
+        message={snackbarMessage}
+        setMessage={setSnackbarMessage}
       />
     </div>
   );

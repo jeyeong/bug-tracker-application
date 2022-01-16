@@ -75,13 +75,13 @@ const SingleProject = ({ id }) => {
         setProject={setProject}
         setSnackbarMessage={setSnackbarMessage}
       />
-      <SnackbarAlert
-        message={snackbarMessage}
-        setMessage={setSnackbarMessage}
-      />
       <DeleteProject
         id={id}
         setSnackbarMessage={setSnackbarMessage}
+      />
+      <SnackbarAlert
+        message={snackbarMessage}
+        setMessage={setSnackbarMessage}
       />
     </div>
   );

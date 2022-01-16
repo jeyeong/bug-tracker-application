@@ -1,0 +1,9 @@
+.ticket__resolved {
+  margin-left: 1rem;
+}
+
+.ticket__resolved-button__resolved {
+  text-transform: none !important;
+  font-size: 12.5px !important;
+  letter-spacing: 0.4px;
+}
