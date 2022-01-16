@@ -62,7 +62,7 @@ const App = () => {
       >
         <CustomTheme>
           <Routes>
-            <Route path='/' element={<Dashboard />} />
+            <Route path='/' element={<Dashboard uid={userID} />} />
             <Route path='/manage-users' element={<ManageUsers role={role} />} />
             <Route path='/manage-projects' element={<ManageProjects role={role} />} />
             <Route path='/projects' element={<MyProjects uid={userID} />} />

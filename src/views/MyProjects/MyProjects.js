@@ -1,31 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useSearchParams } from 'react-router-dom';
-import { ProjectCard } from '../../components/MyProjects';
-import SingleProject from './SingleProject';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import { ProjectCard } from '../../components/MyProjects';
+import { useSearchParams } from 'react-router-dom';
+import SingleProject from './SingleProject';
 import SingleTicket from '../MyTickets/SingleTicket';
+import { defaultCounts, groupTicketCounts } from '../../utils/data/ticketCountTools';
 
 import './MyProjects.css';
-
-const defaultCounts = {
-  Critical: 0,
-  Medium: 0,
-  Low: 0,
-};
-
-const groupTicketCounts = ticketCounts => {
-  const rv = {};
-
-  for (let tc of ticketCounts) {
-    if (!(tc.project_id in rv)) {
-      rv[tc.project_id] = { ...defaultCounts };
-    }
-    rv[tc.project_id][tc.priority] = tc.count;
-  }
-
-  return rv;
-}
 
 const AllProjects = ({ uid }) => {
   // Get data from backend API
