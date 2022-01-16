@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
-import { SnackbarAlert } from '../../components/Auxiliary';
+import { BackButton, SnackbarAlert } from '../../components/Auxiliary';
 
 import './SingleTicket.css';
 
@@ -43,7 +43,10 @@ const SingleTicket = ({ tid }) => {
   console.log(ticket);
 
   return (
-    <div>
+    <div className='ticket'>
+      <BackButton
+        link='/tickets'
+      />
       Single Ticket {tid}
     </div>
   );

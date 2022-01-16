@@ -1,0 +1,14 @@
+.ticket {
+  width: 100%;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .ticket {
+    padding: 2rem 1.5rem;
+  }
+}

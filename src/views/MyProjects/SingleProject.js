@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ResourceNotFound } from '../../components/Errors';
-import {
-  BackButton,
-  CreateTicket,
-  Tickets,
-} from '../../components/MyProjects';
+import { BackButton } from '../../components/Auxiliary';
+import { CreateTicket, Tickets } from '../../components/MyProjects';
 
 import './SingleProject.css';
 
@@ -56,7 +53,9 @@ const SingleProject = ({ pid, uid }) => {
 
   return (
     <div className='project'>
-      <BackButton />
+      <BackButton
+        link='/projects'
+      />
       <div className='project__name'>
         <span>{project.name}</span>
         <CreateTicket
