@@ -32,7 +32,7 @@ const SingleProject = ({ pid, uid }) => {
       });
 
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/tickets/${pid}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/tickets/project/${pid}`)
       .then(res => {
         if (isSubscribed) {
           setTickets(res?.data);

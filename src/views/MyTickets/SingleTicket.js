@@ -27,6 +27,9 @@ const SingleTicket = ({ tid }) => {
     return () => (isSubscribed = false);
   }, [tid])
 
+  // Snackbar
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+
   // Loading screen
   if (appIsLoading) {
     return <LoadingScreen />;
@@ -36,6 +39,8 @@ const SingleTicket = ({ tid }) => {
   if (!ticket) {
     return <ResourceNotFound resourceName='Ticket' />;
   }
+
+  console.log(ticket);
 
   return (
     <div>
