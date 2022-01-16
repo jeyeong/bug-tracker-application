@@ -1,0 +1,38 @@
+.ticket__title {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.ticket__title-id {
+  font-size: 1.1rem;
+  padding: 2px 5px;
+  border-radius: 8px;
+}
+
+#title-id__critical {
+  background-color: #f3645d;
+}
+
+#title-id__medium {
+  background-color: #ffca28;
+}
+
+#title-id__low {
+  background-color: #ffee58;
+}
+
+.ticket__title-text {
+  margin-left: 14px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ticket__title-edit__icon {
+  margin-left: 8px;
+  padding-top: 6px !important;
+  color: #222 !important;
+}
