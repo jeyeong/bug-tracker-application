@@ -12,7 +12,6 @@
   margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 5rem;
   row-gap: 3rem;
 }
 
@@ -20,6 +19,7 @@
 
 .dashboard__projects {
   width: max-content;
+  margin-right: 6rem;
 }
 
 .dashboard__projects-title {
@@ -53,11 +53,13 @@
   font-weight: 600;
 }
 
-.dashboard__charts-placeholder {
+.dashboard__charts-body {
   margin-top: 1rem;
-  width: 500px;
-  height: 500px;
-  border: 2px solid black;
+}
+
+.dashboard__charts-pie {
+  height: 280px;
+  width: 280px;
 }
 
 /* Media queries */

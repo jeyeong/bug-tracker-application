@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ProjectCard } from '../../components/MyProjects';
+import { PriorityCountsChart } from '../../components/Dashboard';
 import {
   defaultCounts,
   groupTicketCounts,
@@ -43,8 +44,6 @@ const Dashboard = ({ uid }) => {
     return <LoadingScreen />;
   }
 
-  console.log(ticketsByPriority);
-
   return (
     <div className='dashboard'>
       <div className='dashboard__title'>Dashboard</div>
@@ -69,8 +68,10 @@ const Dashboard = ({ uid }) => {
           <span className='dashboard__charts-title'>
             Statistics
           </span>
-          <div className='dashboard__charts-placeholder'>
-
+          <div className='dashboard__charts-body'>
+            <div className='dashboard__charts-pie'>
+              <PriorityCountsChart data={ticketsByPriority} />
+            </div>
           </div>
         </div>
       </div>
