@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { ProjectCard } from '../../components/MyProjects';
-import { PriorityCountsChart } from '../../components/Dashboard';
+import {
+  PriorityCountsChart,
+  WeeklyTicketCountChart,
+} from '../../components/Dashboard';
 import {
   defaultCounts,
   groupTicketCounts,
@@ -16,10 +19,11 @@ const Dashboard = ({ uid }) => {
   const [projects, setProjects] = useState(undefined);
   const [ticketsByProject, setTicketsByProject] = useState(undefined);
   const [ticketsByPriority, setTicketsByPriority] = useState(undefined);
+  const [ticketsByWeek, setTicketsByWeek] = useState(undefined);
   const [appIsLoading, setAppIsLoading] = useState(true);
 
   useEffect(() => {
-    let counter = 2;
+    let counter = 3;
   
     // Project list
     axios
@@ -33,8 +37,15 @@ const Dashboard = ({ uid }) => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/tickets/summary/${uid}`)
       .then(res => {
-        setTicketsByProject(groupTicketCounts(res?.data || []));
-        setTicketsByPriority(countTicketsByPriority(res?.data || []));
+        setTicketsByProject(groupTicketCounts(res?.data || {}));
+        setTicketsByPriority(countTicketsByPriority(res?.data || {}));
+        if (--counter === 0) setAppIsLoading(false);
+      });
+    
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/tickets/byweek/${uid}`)
+      .then(res => {
+        setTicketsByWeek(res?.data || []);
         if (--counter === 0) setAppIsLoading(false);
       });
   }, [uid]);
@@ -69,8 +80,11 @@ const Dashboard = ({ uid }) => {
             Statistics
           </span>
           <div className='dashboard__charts-body'>
-            <div className='dashboard__charts-pie'>
+            <div className='dashboard__charts-priority'>
               <PriorityCountsChart data={ticketsByPriority} />
+            </div>
+            <div className='dashboard__charts-byweek'>
+              <WeeklyTicketCountChart data={ticketsByWeek} />
             </div>
           </div>
         </div>

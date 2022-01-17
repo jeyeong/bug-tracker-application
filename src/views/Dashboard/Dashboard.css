@@ -30,7 +30,7 @@
 .dashboard__projects-list {
   margin-top: 1rem;
   width: 360px;
-  height: 500px;
+  height: 530px;
   border-radius: 12px;
   box-shadow: 0 0 3px #888;
   overflow: hidden;
@@ -57,9 +57,33 @@
   margin-top: 1rem;
 }
 
-.dashboard__charts-pie {
+.dashboard__charts-priority {
+  height: 320px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 0 3px #888;
+}
+
+.dashboard__charts-priority > div {
+  margin-top: 10px;
   height: 280px;
   width: 280px;
+}
+
+.dashboard__charts-byweek {
+  margin-top: 2.5rem;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 0 3px #888;
+  padding: 10px 0 15px 0;
+}
+
+.dashboard__charts-byweek > div {
+  width: 290px;
 }
 
 /* Media queries */
@@ -71,10 +95,10 @@
 
   .dashboard__projects-list {
     height: max-content;
-    max-height: 500px;
+    max-height: 530px;
   }
 
   .dashboard__projects-list > div {
-    max-height: 500px;
+    max-height: 530px;
   }
 }
