@@ -1,6 +1,6 @@
 # Bug Tracker Application (Front End)
 
-**Deployed at: https://bug-tracker-james.web.app/**
+**Check it out here: https://bug-tracker-james.web.app/**
 
 Inspired by Coder Foundry.
 
